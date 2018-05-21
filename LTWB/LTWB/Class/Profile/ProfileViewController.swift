@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileViewController: UITableViewController {
+class ProfileViewController: BaseTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -11,7 +11,7 @@ import UIKit
 class MainTabBarViewController: UITabBarController {
 
 //    private lazy var heighlightedImages = ["tabbar_home_highlighted","tabbar_message_center_highlighted","","tabbar_discover_highlighted","tabbar_profile_highlighted"]
-    private lazy var composeBtn = UIButton()
+    private lazy var composeBtn = UIButton(imageName: "tabbar_compose_icon_add", bkImageName: "tabbar_compose_button")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,13 +24,11 @@ class MainTabBarViewController: UITabBarController {
 extension MainTabBarViewController {
     
     private func setComposeBtn() {
-        composeBtn.setBackgroundImage(UIImage(named: "tabbar_compose_button"), for: .normal)
-        composeBtn.setBackgroundImage(UIImage(named: "tabbar_compose_button_highlighted"), for: .highlighted)
-        composeBtn.setImage(UIImage(named: "tabbar_compose_icon_add"), for: .normal)
-        composeBtn.setImage(UIImage(named: "tabbar_compose_icon_add_highlighted"), for: .highlighted)
-        composeBtn.sizeToFit()
+        
         composeBtn.center = CGPoint(x: tabBar.bounds.size.width*0.5, y: tabBar.bounds.size.height*0.5)
         tabBar.addSubview(composeBtn)
+        composeBtn.addTarget(self, action: #selector(MainTabBarViewController.composeBtnClick), for: .touchUpInside)
+        
     }
     /*
     private func setTabBarItems() {
@@ -42,6 +40,14 @@ extension MainTabBarViewController {
         item.selectedImage = UIImage(named: heighlightedImages[i])
         }
     }*/
+    
+}
+
+//MARK: 事件监听
+extension MainTabBarViewController {
+    @objc private func composeBtnClick() {
+        print(#function)
+    }
     
 }
 

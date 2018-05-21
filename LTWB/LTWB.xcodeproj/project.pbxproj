@@ -23,6 +23,10 @@
 		D4792F7E20AE628700C9012B /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4792F7D20AE628700C9012B /* DiscoverViewController.swift */; };
 		D4792F8020AE629900C9012B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4792F7F20AE629900C9012B /* ProfileViewController.swift */; };
 		D4792F8220AE634200C9012B /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = D4792F8120AE634200C9012B /* MainVCSettings.json */; };
+		D498A6AF20B2A0360047F571 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D498A6AE20B2A0360047F571 /* UIButton+Extension.swift */; };
+		D498A6B220B2B8320047F571 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D498A6B120B2B8320047F571 /* BaseTableViewController.swift */; };
+		D498A6B420B2B9750047F571 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D498A6B320B2B9750047F571 /* VisitorView.swift */; };
+		D498A6B620B2B9930047F571 /* VisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D498A6B520B2B9930047F571 /* VisitorView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +69,10 @@
 		D4792F7D20AE628700C9012B /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
 		D4792F7F20AE629900C9012B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D4792F8120AE634200C9012B /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
+		D498A6AE20B2A0360047F571 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		D498A6B120B2B8320047F571 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		D498A6B320B2B9750047F571 /* VisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
+		D498A6B520B2B9930047F571 /* VisitorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VisitorView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +167,7 @@
 				D4792F7220AE618400C9012B /* Message */,
 				D4792F7020AE618400C9012B /* Discover */,
 				D4792F7320AE618400C9012B /* Profile */,
+				D498A6AC20B29FDA0047F571 /* Tools */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -203,9 +212,36 @@
 			isa = PBXGroup;
 			children = (
 				D4411C4D20AEAFCE0034BBE7 /* Resource */,
+				D498A6B020B2B7FF0047F571 /* visitor */,
 				D4792F7720AE624E00C9012B /* MainTabBarViewController.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		D498A6AC20B29FDA0047F571 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				D498A6AD20B29FDA0047F571 /* Category */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		D498A6AD20B29FDA0047F571 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				D498A6AE20B2A0360047F571 /* UIButton+Extension.swift */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		D498A6B020B2B7FF0047F571 /* visitor */ = {
+			isa = PBXGroup;
+			children = (
+				D498A6B120B2B8320047F571 /* BaseTableViewController.swift */,
+				D498A6B320B2B9750047F571 /* VisitorView.swift */,
+				D498A6B520B2B9930047F571 /* VisitorView.xib */,
+			);
+			path = visitor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,6 +359,7 @@
 				D4411C5520AEB3DD0034BBE7 /* discover.storyboard in Resources */,
 				D4792F4520AE5DE000C9012B /* Main.storyboard in Resources */,
 				D4411C5020AEB3A70034BBE7 /* home.storyboard in Resources */,
+				D498A6B620B2B9930047F571 /* VisitorView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,10 +386,13 @@
 			files = (
 				D4792F8020AE629900C9012B /* ProfileViewController.swift in Sources */,
 				D4792F4020AE5DE000C9012B /* AppDelegate.swift in Sources */,
+				D498A6B220B2B8320047F571 /* BaseTableViewController.swift in Sources */,
 				D4792F7820AE624E00C9012B /* MainTabBarViewController.swift in Sources */,
 				D4792F7C20AE627500C9012B /* MessageViewController.swift in Sources */,
 				D4792F7A20AE626200C9012B /* HomeViewController.swift in Sources */,
+				D498A6B420B2B9750047F571 /* VisitorView.swift in Sources */,
 				D4792F7E20AE628700C9012B /* DiscoverViewController.swift in Sources */,
+				D498A6AF20B2A0360047F571 /* UIButton+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
