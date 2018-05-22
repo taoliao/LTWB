@@ -1,37 +1,103 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="VisitorView" customModule="LTWB" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="341" height="587"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36t-5Q-67U">
-                    <rect key="frame" x="39" y="170" width="42" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="visitordiscover_feed_image_smallicon" translatesAutoresizingMaskIntoConstraints="NO" id="FHs-Fs-ZwX" userLabel="转盘">
+                    <rect key="frame" x="83" y="126" width="175" height="175"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="175" id="2uc-zq-wsW"/>
+                        <constraint firstAttribute="width" constant="175" id="H03-Rm-5Fn"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="visitordiscover_feed_mask_smallicon" translatesAutoresizingMaskIntoConstraints="NO" id="U1f-jv-arJ" userLabel="背景">
+                    <rect key="frame" x="0.0" y="-21.5" width="341" height="440"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="440" id="OSX-ov-hC3"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="visitordiscover_feed_image_house" translatesAutoresizingMaskIntoConstraints="NO" id="nEQ-eZ-bkC">
+                    <rect key="frame" x="123" y="193.5" width="94" height="90"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="90" id="QsZ-aW-aEU"/>
+                        <constraint firstAttribute="width" constant="94" id="Tax-Dd-xX0"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="关注一些人，回这里看有什么惊喜" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfG-Wz-st1">
+                    <rect key="frame" x="61" y="333.5" width="220" height="17"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="220" id="VFP-wV-zce"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wqI-Ip-IK3">
-                    <rect key="frame" x="35" y="291" width="46" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Button"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1r-CS-6D0">
+                    <rect key="frame" x="61" y="375.5" width="60" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="7IJ-yg-T3h"/>
+                        <constraint firstAttribute="height" constant="32" id="lzR-zc-Lrh"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="注册" backgroundImage="common_button_white_disable">
+                        <color key="titleColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="906-ez-hHz">
+                    <rect key="frame" x="221" y="375.5" width="60" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="KIp-Pn-RTb"/>
+                        <constraint firstAttribute="width" constant="60" id="VjT-b8-oB9"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="登录" backgroundImage="common_button_white_disable">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="-119" y="42"/>
+            <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="zfG-Wz-st1" firstAttribute="top" secondItem="nEQ-eZ-bkC" secondAttribute="bottom" constant="50" id="3aJ-yd-1Iq"/>
+                <constraint firstItem="zfG-Wz-st1" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="46g-3G-Wcr"/>
+                <constraint firstItem="U1f-jv-arJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="6jv-RD-ojF"/>
+                <constraint firstAttribute="trailing" secondItem="U1f-jv-arJ" secondAttribute="trailing" id="AIf-dX-GNw"/>
+                <constraint firstItem="nEQ-eZ-bkC" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="CkP-dH-KJQ"/>
+                <constraint firstItem="U1f-jv-arJ" firstAttribute="centerY" secondItem="FHs-Fs-ZwX" secondAttribute="centerY" constant="-15" id="Eo7-Kn-Czz"/>
+                <constraint firstItem="d1r-CS-6D0" firstAttribute="leading" secondItem="zfG-Wz-st1" secondAttribute="leading" id="Ey4-tn-goy"/>
+                <constraint firstItem="FHs-Fs-ZwX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="cee-f4-L0R"/>
+                <constraint firstItem="d1r-CS-6D0" firstAttribute="top" secondItem="zfG-Wz-st1" secondAttribute="bottom" constant="25" id="gEC-vX-w3i"/>
+                <constraint firstItem="906-ez-hHz" firstAttribute="trailing" secondItem="zfG-Wz-st1" secondAttribute="trailing" id="gRh-xs-LwK"/>
+                <constraint firstItem="906-ez-hHz" firstAttribute="top" secondItem="zfG-Wz-st1" secondAttribute="bottom" constant="25" id="rhd-Vo-YWu"/>
+                <constraint firstItem="FHs-Fs-ZwX" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-80" id="wcU-GN-bo0"/>
+                <constraint firstItem="nEQ-eZ-bkC" firstAttribute="centerY" secondItem="FHs-Fs-ZwX" secondAttribute="centerY" constant="25" id="yQ3-m5-zpV"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="houseView" destination="nEQ-eZ-bkC" id="Jzd-2U-0LD"/>
+                <outlet property="logInBtn" destination="906-ez-hHz" id="abR-JZ-d1N"/>
+                <outlet property="messagelable" destination="zfG-Wz-st1" id="pIN-Cy-6NF"/>
+                <outlet property="registerBtn" destination="d1r-CS-6D0" id="FQG-By-7ik"/>
+                <outlet property="zhuangpanView" destination="FHs-Fs-ZwX" id="ceG-8I-ns6"/>
+            </connections>
+            <point key="canvasLocation" x="-149.5" y="-21.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="common_button_white_disable" width="11" height="9"/>
+        <image name="visitordiscover_feed_image_house" width="94" height="90"/>
+        <image name="visitordiscover_feed_image_smallicon" width="175" height="175"/>
+        <image name="visitordiscover_feed_mask_smallicon" width="175" height="175"/>
+    </resources>
 </document>
