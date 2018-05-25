@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import SDWebImage
 
 class BaseTableViewController: UITableViewController {
 
-    var isLogIn : Bool = true
+    var isLogIn : Bool = false
     lazy var visitorView = VisitorView.vistorView()
     
     override func loadView() {
@@ -48,7 +49,8 @@ extension BaseTableViewController {
         
     }
     @objc private func logInBtnClick() {
-          print(#function)
+         let oathVC = UINavigationController(rootViewController: OauthViewController())
+         present(oathVC, animated: true, completion: nil)
     }
     
 }

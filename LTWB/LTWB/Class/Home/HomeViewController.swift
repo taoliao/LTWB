@@ -9,9 +9,10 @@
 import UIKit
 
 class HomeViewController: BaseTableViewController {
-
     private lazy var titleBtn = TitleButton()
-    
+    private lazy var popoverAnimtor = PopoverAnimatior { (presented) in
+        self.titleBtn.isSelected = presented
+    }
     //MARK:系统调用
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,8 +24,7 @@ class HomeViewController: BaseTableViewController {
         setNavigationItem()
         setTitleView()
     }
-
-  
+    
 }
 
 //MARK:设置UI
@@ -49,27 +49,15 @@ extension HomeViewController {
         titleBtn.isSelected = !titleBtn.isSelected
         
         let popVC = PopoverViewController()
+        //modalPresentationStyle=.custom modal出来之后 之前的视图不会消失
         popVC.modalPresentationStyle = .custom
-        popVC.transitioningDelegate = self
+        popVC.transitioningDelegate = popoverAnimtor
+        popoverAnimtor.presentedViewFrame = CGRect(x: 100, y: 55, width: 180, height: 250)
         present(popVC, animated: true, completion: nil)
         
     }
 
 }
-
-//MARK: delegate 方法
-extension HomeViewController : UIViewControllerTransitioningDelegate {
-    
-    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
-        
-        return TLPresentationController(presentedViewController: presented, presenting: presenting)
-        
-    }
-    
-    
-}
-
-
 
 
 

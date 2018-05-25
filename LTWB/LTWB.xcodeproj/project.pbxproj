@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27AB82FEBD253C44E3509397 /* Pods_LTWB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5646CD40F8DDED96DBABBDFC /* Pods_LTWB.framework */; };
 		D4411C5020AEB3A70034BBE7 /* home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4411C4E20AEB3A70034BBE7 /* home.storyboard */; };
 		D4411C5220AEB3C40034BBE7 /* message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4411C5120AEB3C40034BBE7 /* message.storyboard */; };
 		D4411C5520AEB3DD0034BBE7 /* discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4411C5320AEB3DD0034BBE7 /* discover.storyboard */; };
 		D4411C5720AEB3EF0034BBE7 /* profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4411C5620AEB3EF0034BBE7 /* profile.storyboard */; };
 		D4411C5A20AEB4D00034BBE7 /* Null.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4411C5820AEB4D00034BBE7 /* Null.storyboard */; };
+		D4659AB120B66B9800C733A6 /* OauthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4659AAF20B66B9800C733A6 /* OauthViewController.swift */; };
+		D4659AB420B68A7000C733A6 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4659AB320B68A7000C733A6 /* Comment.swift */; };
 		D4792F4020AE5DE000C9012B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4792F3F20AE5DE000C9012B /* AppDelegate.swift */; };
 		D4792F4520AE5DE000C9012B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4792F4320AE5DE000C9012B /* Main.storyboard */; };
 		D4792F4720AE5DE000C9012B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4792F4620AE5DE000C9012B /* Assets.xcassets */; };
@@ -32,6 +35,8 @@
 		D4A8B81420B3FC990004E897 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A8B81220B3FC990004E897 /* PopoverViewController.swift */; };
 		D4A8B81520B3FC990004E897 /* PopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4A8B81320B3FC990004E897 /* PopoverViewController.xib */; };
 		D4A8B81720B401530004E897 /* TLPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A8B81620B401530004E897 /* TLPresentationController.swift */; };
+		D4A8B81920B41D350004E897 /* PopoverAnimatior.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A8B81820B41D350004E897 /* PopoverAnimatior.swift */; };
+		D4E784C520B54BA600102AA7 /* TLNetWorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E784C420B54BA600102AA7 /* TLNetWorkTools.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,11 +57,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5646CD40F8DDED96DBABBDFC /* Pods_LTWB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTWB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4411C4F20AEB3A70034BBE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LTWB/Base.lproj/home.storyboard; sourceTree = "<group>"; };
 		D4411C5120AEB3C40034BBE7 /* message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = message.storyboard; sourceTree = "<group>"; };
 		D4411C5420AEB3DD0034BBE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LTWB/Base.lproj/discover.storyboard; sourceTree = "<group>"; };
 		D4411C5620AEB3EF0034BBE7 /* profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = profile.storyboard; sourceTree = "<group>"; };
 		D4411C5920AEB4D00034BBE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LTWB/Base.lproj/Null.storyboard; sourceTree = "<group>"; };
+		D4659AAF20B66B9800C733A6 /* OauthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OauthViewController.swift; sourceTree = "<group>"; };
+		D4659AB320B68A7000C733A6 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		D4792F3C20AE5DE000C9012B /* LTWB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LTWB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4792F3F20AE5DE000C9012B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4792F4420AE5DE000C9012B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -83,6 +91,10 @@
 		D4A8B81220B3FC990004E897 /* PopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
 		D4A8B81320B3FC990004E897 /* PopoverViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopoverViewController.xib; sourceTree = "<group>"; };
 		D4A8B81620B401530004E897 /* TLPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLPresentationController.swift; sourceTree = "<group>"; };
+		D4A8B81820B41D350004E897 /* PopoverAnimatior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverAnimatior.swift; sourceTree = "<group>"; };
+		D4E784C420B54BA600102AA7 /* TLNetWorkTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLNetWorkTools.swift; sourceTree = "<group>"; };
+		F3F09791194D6A7C4A7DAE83 /* Pods-LTWB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTWB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LTWB/Pods-LTWB.debug.xcconfig"; sourceTree = "<group>"; };
+		F843A839D45FBC43520AAE31 /* Pods-LTWB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTWB.release.xcconfig"; path = "Pods/Target Support Files/Pods-LTWB/Pods-LTWB.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27AB82FEBD253C44E3509397 /* Pods_LTWB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +123,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C2FFFB87706AB3C6418B168F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5646CD40F8DDED96DBABBDFC /* Pods_LTWB.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D4411C4D20AEAFCE0034BBE7 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +140,14 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		D4659AAE20B66B7600C733A6 /* Oauth */ = {
+			isa = PBXGroup;
+			children = (
+				D4659AAF20B66B9800C733A6 /* OauthViewController.swift */,
+			);
+			path = Oauth;
+			sourceTree = "<group>";
+		};
 		D4792F3320AE5DE000C9012B = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +155,8 @@
 				D4792F5320AE5DE000C9012B /* LTWBTests */,
 				D4792F5E20AE5DE000C9012B /* LTWBUITests */,
 				D4792F3D20AE5DE000C9012B /* Products */,
+				DE469E67C74293603F161D22 /* Pods */,
+				C2FFFB87706AB3C6418B168F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -222,6 +253,7 @@
 		D4792F7420AE61D900C9012B /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				D4659AAE20B66B7600C733A6 /* Oauth */,
 				D4411C4D20AEAFCE0034BBE7 /* Resource */,
 				D498A6B020B2B7FF0047F571 /* visitor */,
 				D4792F7720AE624E00C9012B /* MainTabBarViewController.swift */,
@@ -234,6 +266,8 @@
 			children = (
 				D498A6AD20B29FDA0047F571 /* Category */,
 				D4A8B80F20B3E8160004E897 /* TitleButton.swift */,
+				D4E784C420B54BA600102AA7 /* TLNetWorkTools.swift */,
+				D4659AB320B68A7000C733A6 /* Comment.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -263,8 +297,18 @@
 				D4A8B81620B401530004E897 /* TLPresentationController.swift */,
 				D4A8B81220B3FC990004E897 /* PopoverViewController.swift */,
 				D4A8B81320B3FC990004E897 /* PopoverViewController.xib */,
+				D4A8B81820B41D350004E897 /* PopoverAnimatior.swift */,
 			);
 			path = UIPopover;
+			sourceTree = "<group>";
+		};
+		DE469E67C74293603F161D22 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F3F09791194D6A7C4A7DAE83 /* Pods-LTWB.debug.xcconfig */,
+				F843A839D45FBC43520AAE31 /* Pods-LTWB.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,9 +318,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D4792F6420AE5DE000C9012B /* Build configuration list for PBXNativeTarget "LTWB" */;
 			buildPhases = (
+				378AC5FE3946268EEB440C09 /* [CP] Check Pods Manifest.lock */,
 				D4792F3820AE5DE000C9012B /* Sources */,
 				D4792F3920AE5DE000C9012B /* Frameworks */,
 				D4792F3A20AE5DE000C9012B /* Resources */,
+				C114A7B9162AC4B937660ED4 /* [CP] Embed Pods Frameworks */,
+				01057F9D53FC2603758C38A7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -329,6 +376,7 @@
 		D4792F3420AE5DE000C9012B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = TL;
 				LastSwiftUpdateCheck = 0920;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = corepress;
@@ -403,6 +451,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		01057F9D53FC2603758C38A7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LTWB/Pods-LTWB-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		378AC5FE3946268EEB440C09 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LTWB-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C114A7B9162AC4B937660ED4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LTWB/Pods-LTWB-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LTWB/Pods-LTWB-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D4792F3820AE5DE000C9012B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -412,10 +520,14 @@
 				D4792F4020AE5DE000C9012B /* AppDelegate.swift in Sources */,
 				D498A6B220B2B8320047F571 /* BaseTableViewController.swift in Sources */,
 				D4792F7820AE624E00C9012B /* MainTabBarViewController.swift in Sources */,
+				D4659AB120B66B9800C733A6 /* OauthViewController.swift in Sources */,
+				D4659AB420B68A7000C733A6 /* Comment.swift in Sources */,
 				D4A8B81420B3FC990004E897 /* PopoverViewController.swift in Sources */,
 				D4A8B81720B401530004E897 /* TLPresentationController.swift in Sources */,
+				D4E784C520B54BA600102AA7 /* TLNetWorkTools.swift in Sources */,
 				D4A8B81020B3E8160004E897 /* TitleButton.swift in Sources */,
 				D4792F7C20AE627500C9012B /* MessageViewController.swift in Sources */,
+				D4A8B81920B41D350004E897 /* PopoverAnimatior.swift in Sources */,
 				D4A8B80E20B3C4620004E897 /* UIBarButtonItem+Extention.swift in Sources */,
 				D4792F7A20AE626200C9012B /* HomeViewController.swift in Sources */,
 				D498A6B420B2B9750047F571 /* VisitorView.swift in Sources */,
@@ -600,6 +712,7 @@
 		};
 		D4792F6520AE5DE000C9012B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3F09791194D6A7C4A7DAE83 /* Pods-LTWB.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -616,6 +729,7 @@
 		};
 		D4792F6620AE5DE000C9012B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F843A839D45FBC43520AAE31 /* Pods-LTWB.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
