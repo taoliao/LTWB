@@ -36,6 +36,7 @@
 		D4A8B81520B3FC990004E897 /* PopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4A8B81320B3FC990004E897 /* PopoverViewController.xib */; };
 		D4A8B81720B401530004E897 /* TLPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A8B81620B401530004E897 /* TLPresentationController.swift */; };
 		D4A8B81920B41D350004E897 /* PopoverAnimatior.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A8B81820B41D350004E897 /* PopoverAnimatior.swift */; };
+		D4BEE05D20B7EC4A00C021A9 /* TLUserAcount.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BEE05C20B7EC4A00C021A9 /* TLUserAcount.swift */; };
 		D4E784C520B54BA600102AA7 /* TLNetWorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E784C420B54BA600102AA7 /* TLNetWorkTools.swift */; };
 /* End PBXBuildFile section */
 
@@ -92,6 +93,7 @@
 		D4A8B81320B3FC990004E897 /* PopoverViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopoverViewController.xib; sourceTree = "<group>"; };
 		D4A8B81620B401530004E897 /* TLPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLPresentationController.swift; sourceTree = "<group>"; };
 		D4A8B81820B41D350004E897 /* PopoverAnimatior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverAnimatior.swift; sourceTree = "<group>"; };
+		D4BEE05C20B7EC4A00C021A9 /* TLUserAcount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLUserAcount.swift; sourceTree = "<group>"; };
 		D4E784C420B54BA600102AA7 /* TLNetWorkTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLNetWorkTools.swift; sourceTree = "<group>"; };
 		F3F09791194D6A7C4A7DAE83 /* Pods-LTWB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTWB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LTWB/Pods-LTWB.debug.xcconfig"; sourceTree = "<group>"; };
 		F843A839D45FBC43520AAE31 /* Pods-LTWB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTWB.release.xcconfig"; path = "Pods/Target Support Files/Pods-LTWB/Pods-LTWB.release.xcconfig"; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				D4659AAF20B66B9800C733A6 /* OauthViewController.swift */,
+				D4BEE05C20B7EC4A00C021A9 /* TLUserAcount.swift */,
 			);
 			path = Oauth;
 			sourceTree = "<group>";
@@ -528,6 +531,7 @@
 				D4A8B81020B3E8160004E897 /* TitleButton.swift in Sources */,
 				D4792F7C20AE627500C9012B /* MessageViewController.swift in Sources */,
 				D4A8B81920B41D350004E897 /* PopoverAnimatior.swift in Sources */,
+				D4BEE05D20B7EC4A00C021A9 /* TLUserAcount.swift in Sources */,
 				D4A8B80E20B3C4620004E897 /* UIBarButtonItem+Extention.swift in Sources */,
 				D4792F7A20AE626200C9012B /* HomeViewController.swift in Sources */,
 				D498A6B420B2B9750047F571 /* VisitorView.swift in Sources */,
@@ -717,6 +721,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4ZCWHEW4VK;
 				INFOPLIST_FILE = LTWB/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -734,6 +739,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4ZCWHEW4VK;
 				INFOPLIST_FILE = LTWB/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

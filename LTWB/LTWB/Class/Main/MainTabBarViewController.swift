@@ -40,7 +40,6 @@ extension MainTabBarViewController {
         item.selectedImage = UIImage(named: heighlightedImages[i])
         }
     }*/
-    
 }
 
 //MARK: 事件监听

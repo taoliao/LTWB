@@ -65,7 +65,21 @@ extension TLNetWorkTools {
             }
         }
     }
-    
+}
+//MARK:请求用户信息
+extension TLNetWorkTools {
+   
+    func loadUserInfo(access_token : String,uid : String,loadFinished : @escaping (_ userInfo : [String : Any]?,_ eeor : Error?) -> ()) {
+        
+        let url = "https://api.weibo.com/2/users/show.json"
+        let parameters = ["access_token":access_token,"uid":uid]
+        
+        request(requestType: .GET, url: url, parameters: parameters) { (result, error) in
+            loadFinished(result,error)
+        }
+        
+    }
     
 }
+
 

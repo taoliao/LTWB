@@ -48,17 +48,15 @@ extension OauthViewController : WKNavigationDelegate{
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Swift.Void) {
         
         guard let urlStr = navigationAction.request.url?.absoluteString else {
+             decisionHandler(.cancel)
              return
         }
         let contain = (urlStr as NSString).contains("code=")
-        if contain {
-            decisionHandler(.cancel)
-        }else {
-            decisionHandler(.allow)
-        }
         guard contain else {
+            decisionHandler(.allow)
              return
         }
+        decisionHandler(.cancel)
        let codeStr = (urlStr as NSString).components(separatedBy: "code=").last!
         loadAccess_token(code: codeStr)
         
@@ -93,16 +91,39 @@ extension OauthViewController {
 
 //MARK: 数据请求
 extension OauthViewController {
-    
+    //请求Access_token
     func loadAccess_token(code : String) {
         TLNetWorkTools.shared.requestAccesstoken(code: code) { (result, error) in
             if error == nil {
-                print(result!)
+               let userAcount = TLUserAcount(dic: result!)
+
+               self.loadUserInfo(userAcount: userAcount)
+                
             }else {
                 print(error!)
             }
         }
     }
+    
+      //请求用户信息
+    func loadUserInfo(userAcount : TLUserAcount) {
+        
+        TLNetWorkTools.shared.loadUserInfo(access_token: userAcount.access_token!, uid: userAcount.uid!) { (userInfo, error) in
+            if error != nil {
+                print(error!)
+            }
+            userAcount.screen_name = userInfo!["screen_name"] as? String
+            userAcount.avatar_large = userInfo!["avatar_large"] as? String
+            //归档用户信息
+            guard var filePath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true).first else {
+                return
+            }
+            filePath = (filePath as NSString).appendingPathComponent("userAcount.plist")
+            NSKeyedArchiver.archiveRootObject(userAcount, toFile: filePath)
+        }
+        
+    }
+    
     
 }
 
