@@ -11,23 +11,10 @@ import SDWebImage
 
 class BaseTableViewController: UITableViewController {
 
-    var isLogIn : Bool = false
+    var isLogIn : Bool = TLUserAcountViewModel.shareInstance.isLogin
     lazy var visitorView = VisitorView.vistorView()
     
     override func loadView() {
-        
-        guard var filePath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true).first else {
-            return
-        }
-        filePath = (filePath as NSString).appendingPathComponent("userAcount.plist")
-        
-         let userAcount = NSKeyedUnarchiver.unarchiveObject(withFile: filePath) as? TLUserAcount
-       
-         if let userInfo = userAcount {
-            if let expires_Date = userInfo.expires_Date {//判断access_token是否过期
-                 isLogIn = expires_Date.compare(Date()) == ComparisonResult.orderedDescending
-            }
-         }
         isLogIn ? super.loadView() : setUpVisitorVirw()
     }
     

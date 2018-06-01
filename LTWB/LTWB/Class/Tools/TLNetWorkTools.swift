@@ -82,4 +82,26 @@ extension TLNetWorkTools {
     
 }
 
+//MARK:获取当前登录用户及其所关注（授权）用户的最新微博
+extension TLNetWorkTools {
+    
+    func loadStatuses(finished : @escaping ([[String : Any]]?, Error?) -> ()) {
+        let urlStr = "https://api.weibo.com/2/statuses/home_timeline.json"
+        let access_token = TLUserAcountViewModel.shareInstance.userAcount?.access_token
+        let parameters = ["access_token" : access_token!]
+        
+        request(requestType: .GET, url: urlStr, parameters: parameters) { (result, error) in
+            
+            if error == nil {
+                let statuses = result!["statuses"] as? [[String : Any]]
+                 finished(statuses ,nil)
+            }else {
+                finished(nil,error)
+            }
+        
+        }
+}
+    
+}
+    
 

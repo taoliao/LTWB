@@ -19,8 +19,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
         UITabBar.appearance().tintColor = UIColor.orange
         UINavigationBar.appearance().tintColor = UIColor.orange
-
-    
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        
+        if  TLUserAcountViewModel.shareInstance.isLogin {
+            window?.rootViewController = TLWelcomeController()
+        }else {
+            window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+        }
+        
         return true
     }
 

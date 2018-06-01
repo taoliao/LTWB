@@ -9,6 +9,11 @@
 import UIKit
 
 class HomeViewController: BaseTableViewController {
+    
+    static let homeCellD = "homeCell"
+    
+    lazy var statusesViewModels : [StatusesViewModel] = [StatusesViewModel]()
+    
     private lazy var titleBtn = TitleButton()
     private lazy var popoverAnimtor = PopoverAnimatior { (presented) in
         self.titleBtn.isSelected = presented
@@ -23,6 +28,7 @@ class HomeViewController: BaseTableViewController {
         }
         setNavigationItem()
         setTitleView()
+        loadStatuses()
     }
     
 }
@@ -33,10 +39,15 @@ extension HomeViewController {
     private func setNavigationItem() {
         navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "navigationbar_friendattention")
         navigationItem.rightBarButtonItem = UIBarButtonItem(imageName: "navigationbar_pop")
+        self.tableView.separatorStyle = .none
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 300;
+        self.tableView.register(UINib(nibName: "TLHomeViewCell", bundle: nil), forCellReuseIdentifier: HomeViewController.homeCellD)
+
     }
     
     private func setTitleView() {
-        titleBtn.setTitle("仙文文ww", for: .normal)
+        titleBtn.setTitle(TLUserAcountViewModel.shareInstance.userAcount?.screen_name, for: .normal)
         navigationItem.titleView = titleBtn
         titleBtn.addTarget(self, action: #selector(titleBtnClick(titleBtn:)), for: .touchUpInside)
     }
@@ -59,10 +70,46 @@ extension HomeViewController {
 
 }
 
+//MARK:请求首页数据
+extension HomeViewController {
+    
+    func loadStatuses() {
+        
+        TLNetWorkTools.shared.loadStatuses { (statuses, error) in
+            
+            guard let statuses = statuses else {
+                return
+            }
+            for item in statuses {
+                let status = Statuses(dict: item)
+                let viewModel = StatusesViewModel(status: status)
+                self.statusesViewModels.append(viewModel)
+            }
 
+            self.tableView.reloadData()
 
+        }
+    }
+}
 
-
+//MARK: tableViewDelegate
+extension HomeViewController {
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.statusesViewModels.count
+    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewController.homeCellD) as! TLHomeViewCell
+        
+         cell.viewModel = statusesViewModels[indexPath.row]
+        
+         return cell
+    }
+    
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//         return 300
+//    }
+}
 
 
 

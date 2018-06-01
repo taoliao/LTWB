@@ -114,12 +114,13 @@ extension OauthViewController {
             }
             userAcount.screen_name = userInfo!["screen_name"] as? String
             userAcount.avatar_large = userInfo!["avatar_large"] as? String
-            //归档用户信息
-            guard var filePath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true).first else {
-                return
-            }
-            filePath = (filePath as NSString).appendingPathComponent("userAcount.plist")
-            NSKeyedArchiver.archiveRootObject(userAcount, toFile: filePath)
+
+            NSKeyedArchiver.archiveRootObject(userAcount, toFile: TLUserAcountViewModel.shareInstance.filePath)
+            TLUserAcountViewModel.shareInstance.userAcount = userAcount
+            
+            let window = UIApplication.shared.delegate?.window!
+             window?.rootViewController = TLWelcomeController()
+            
         }
         
     }
