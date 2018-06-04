@@ -11,9 +11,10 @@ import SDWebImage
 
 private let leftMargin:CGFloat = 15.0
 private let imageMargin:CGFloat = 5.0
+let pictureCellID:String = "pictureCellID"
 
 class TLHomeViewCell: UITableViewCell {
-    
+
     @IBOutlet weak var contentLableWCon: NSLayoutConstraint!
     @IBOutlet weak var profileView: UIImageView!
     @IBOutlet weak var verfiledView: UIImageView!
@@ -56,16 +57,14 @@ class TLHomeViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         contentLableWCon.constant = UIScreen.main.bounds.width - leftMargin*2
-        
-        pictureView.register(PictureCell.self, forCellWithReuseIdentifier: "pictureCellID")
-        let itemWidth = (UIScreen.main.bounds.width - leftMargin*2 - 2*imageMargin)/3
-        let flowLayout = UICollectionViewFlowLayout()
+    
+        let flowLayout = pictureView.collectionViewLayout as! UICollectionViewFlowLayout
         flowLayout.minimumLineSpacing = 5
         flowLayout.minimumInteritemSpacing = 5
-        flowLayout.itemSize = CGSize(width: itemWidth, height: itemWidth)
-        pictureView.collectionViewLayout = flowLayout
-        
+        pictureView.register(UINib.init(nibName: "TLPictureCell", bundle: nil), forCellWithReuseIdentifier: pictureCellID)
+    
     }
+    
 }
 
 extension TLHomeViewCell {
@@ -76,14 +75,32 @@ extension TLHomeViewCell {
             return CGSize.zero
         }
         pictureBoomMargin.constant = 10.0
+        
+        let flowLayout = pictureView.collectionViewLayout as! UICollectionViewFlowLayout
+        
+//        //处理单张图片
+        if picture_count == 1 {
+            //从磁盘中获取图片
+            let diskPatch = self.viewModel?.imageURLS.last?.absoluteString
+            let patch = diskPatch!
+            guard let image = SDWebImageManager.shared().imageCache?.imageFromDiskCache(forKey: patch) else {
+                 return CGSize.zero
+            }
+            //设置单张图片 layout.itemSize 的大小
+            let size = image.size
+            flowLayout.itemSize = size
+            return  CGSize(width: UIScreen.main.bounds.width - 2*leftMargin, height: size.height)
+        }
         //图片的宽度和高度
-        let pictureWidth = (UIScreen.main.bounds.width - leftMargin*2 - 2*imageMargin)/3
+        let pictureWidth = (UIScreen.main.bounds.width - 2*leftMargin - 2*imageMargin)/3
+        
+         //设置多张图片 layout.itemSize 的大小
+        flowLayout.itemSize = CGSize(width: pictureWidth, height: pictureWidth)
         
         if picture_count == 4 {
             let imageWidth = pictureWidth*2 + imageMargin
             return CGSize(width: imageWidth, height: imageWidth)
         }
-        
         //计算行数
         let rows = CGFloat((picture_count - 1) / 3 + 1)
         //PictureView的高度

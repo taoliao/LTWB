@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		27AB82FEBD253C44E3509397 /* Pods_LTWB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5646CD40F8DDED96DBABBDFC /* Pods_LTWB.framework */; };
+		D424156820C53B6D002168B2 /* TLPictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D424156620C53B6D002168B2 /* TLPictureCell.swift */; };
+		D424156920C53B6D002168B2 /* TLPictureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D424156720C53B6D002168B2 /* TLPictureCell.xib */; };
 		D4411C5020AEB3A70034BBE7 /* home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4411C4E20AEB3A70034BBE7 /* home.storyboard */; };
 		D4411C5220AEB3C40034BBE7 /* message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4411C5120AEB3C40034BBE7 /* message.storyboard */; };
 		D4411C5520AEB3DD0034BBE7 /* discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4411C5320AEB3DD0034BBE7 /* discover.storyboard */; };
@@ -69,6 +71,8 @@
 
 /* Begin PBXFileReference section */
 		5646CD40F8DDED96DBABBDFC /* Pods_LTWB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTWB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D424156620C53B6D002168B2 /* TLPictureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLPictureCell.swift; sourceTree = "<group>"; };
+		D424156720C53B6D002168B2 /* TLPictureCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TLPictureCell.xib; sourceTree = "<group>"; };
 		D4411C4F20AEB3A70034BBE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LTWB/Base.lproj/home.storyboard; sourceTree = "<group>"; };
 		D4411C5120AEB3C40034BBE7 /* message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = message.storyboard; sourceTree = "<group>"; };
 		D4411C5420AEB3DD0034BBE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LTWB/Base.lproj/discover.storyboard; sourceTree = "<group>"; };
@@ -256,6 +260,8 @@
 				D47C4D3E20BE93870030A4A9 /* TLHomeViewCell.swift */,
 				D47C4D3F20BE93870030A4A9 /* TLHomeViewCell.xib */,
 				D4FE928C20BFE16300287814 /* PictureCollectionView.swift */,
+				D424156620C53B6D002168B2 /* TLPictureCell.swift */,
+				D424156720C53B6D002168B2 /* TLPictureCell.xib */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -463,6 +469,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D424156920C53B6D002168B2 /* TLPictureCell.xib in Resources */,
 				D4411C5720AEB3EF0034BBE7 /* profile.storyboard in Resources */,
 				D4411C5A20AEB4D00034BBE7 /* Null.storyboard in Resources */,
 				D4792F4720AE5DE000C9012B /* Assets.xcassets in Resources */,
@@ -570,6 +577,7 @@
 				D4A8B81420B3FC990004E897 /* PopoverViewController.swift in Sources */,
 				D47BDE7C20BD3469001B093A /* Statuses.swift in Sources */,
 				D4BE3C9D20BBA6C800241E7D /* TLUserAcountViewModel.swift in Sources */,
+				D424156820C53B6D002168B2 /* TLPictureCell.swift in Sources */,
 				D47C4D3D20BE892E0030A4A9 /* StatusesViewModel.swift in Sources */,
 				D4A8B81720B401530004E897 /* TLPresentationController.swift in Sources */,
 				D4E784C520B54BA600102AA7 /* TLNetWorkTools.swift in Sources */,

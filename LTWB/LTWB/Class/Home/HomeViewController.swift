@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class HomeViewController: BaseTableViewController {
     
@@ -86,10 +87,40 @@ extension HomeViewController {
                 self.statusesViewModels.append(viewModel)
             }
 
-            self.tableView.reloadData()
+            self.cashImageData(viewModels: self.statusesViewModels)
+//            self.tableView.reloadData()
 
         }
     }
+    
+    //缓存图片
+    func cashImageData(viewModels : [StatusesViewModel]) {
+       
+        let group = DispatchGroup()
+        
+        for viewModel in viewModels {
+            for picture_url in viewModel.imageURLS {
+                //将当前的下载操作添加到组中
+                group.enter()
+            
+                SDWebImageManager.shared().imageDownloader?.downloadImage(with: picture_url, options: [], progress: nil, completed: { (image, _, _, _) in
+                    //缓存到磁盘
+                     SDWebImageManager.shared().imageCache?.store(image, forKey: picture_url.absoluteString, toDisk: true, completion: nil)
+                    //离开当前组
+                     group.leave()
+                })
+                
+            }
+        }
+        
+        //在这里告诉调用者,下完完毕,执行下一步操作
+        group.notify(queue: DispatchQueue.main) {
+             self.tableView.reloadData()
+        }
+        
+        
+    }
+    
 }
 
 //MARK: tableViewDelegate
