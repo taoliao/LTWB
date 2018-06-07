@@ -45,7 +45,8 @@ extension MainTabBarViewController {
 //MARK: 事件监听
 extension MainTabBarViewController {
     @objc private func composeBtnClick() {
-        print(#function)
+        let composeVC = UINavigationController(rootViewController: TLComposeViewController())
+        present(composeVC, animated: true, completion: nil)
     }
     
 }

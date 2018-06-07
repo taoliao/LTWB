@@ -19,6 +19,8 @@ class StatusesViewModel: NSObject {
     var vip_image : UIImage?
     var imageURLS : [URL] = [URL]()
     
+    var cellHeight : CGFloat = 0
+    
     init(status : Statuses) {
         self.statuses = status
         
@@ -50,13 +52,15 @@ class StatusesViewModel: NSObject {
         }
         
         //处理配图
-        if let pic_urls = status.pic_urls {
+    
+        let pic_urls = status.retweeted_status != nil ? status.retweeted_status!.pic_urls : status.pic_urls
+        
+        if let pic_urls = pic_urls {
             for image_url in pic_urls {
                 let url_Str = image_url["thumbnail_pic"]!
                 imageURLS.append(URL(string: url_Str)!)
             }
         }
-        
         
     }
     

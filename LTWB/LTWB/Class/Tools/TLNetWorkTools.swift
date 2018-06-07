@@ -19,7 +19,11 @@ class TLNetWorkTools: AFHTTPSessionManager {
         // 实例化对象
         let instance = TLNetWorkTools()
         // 设置响应反序列化支持的数据类型
-        instance.responseSerializer.acceptableContentTypes?.insert("text/plain")
+         instance.responseSerializer.acceptableContentTypes?.insert("text/plain")
+         instance.responseSerializer.acceptableContentTypes?.insert("application/json")
+         instance.responseSerializer.acceptableContentTypes?.insert("text/javascript")
+         instance.responseSerializer.acceptableContentTypes?.insert("text/json")
+         instance.responseSerializer.acceptableContentTypes?.insert("text/html")
         // 返回对象
         return instance }()
 
@@ -85,10 +89,10 @@ extension TLNetWorkTools {
 //MARK:获取当前登录用户及其所关注（授权）用户的最新微博
 extension TLNetWorkTools {
     
-    func loadStatuses(finished : @escaping ([[String : Any]]?, Error?) -> ()) {
+    func loadStatuses(since_id : Int,max_id : Int,finished : @escaping ([[String : Any]]?, Error?) -> ()) {
         let urlStr = "https://api.weibo.com/2/statuses/home_timeline.json"
         let access_token = TLUserAcountViewModel.shareInstance.userAcount?.access_token
-        let parameters = ["access_token" : access_token!]
+        let parameters = ["access_token" : access_token!,"since_id":since_id,"max_id":max_id] as [String : Any]
         
         request(requestType: .GET, url: urlStr, parameters: parameters) { (result, error) in
             

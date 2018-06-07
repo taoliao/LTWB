@@ -7,7 +7,15 @@
 //
 
 import Foundation
+import UIKit
 
 let  AppKey = "3809142420"
 let AppSecret = "d12dd6b4543fceffe786a214de4200cf"
 let redirect_uri = "http://www.baidu.com"
+
+let IS_iPhoneX = UIScreen.main.bounds.size == CGSize(width: 1125, height: 2436) ? true : false
+
+let IPHONE_NAVIGATIONBAR_HEIGHT = IS_iPhoneX ? 88.0: 64.0
+
+let IPHONE_TARBAR_HEIGHT = IS_iPhoneX ? 83.0 : 49.0
+

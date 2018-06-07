@@ -25,6 +25,12 @@ class TLHomeViewCell: UITableViewCell {
     @IBOutlet weak var contenLable: UILabel!
     @IBOutlet weak var pictureView: PictureCollectionView!
     
+    @IBOutlet weak var boomToolView: UIView!
+    
+    @IBOutlet weak var retweeted_content_lable: UILabel!  //转发微博的正文
+    @IBOutlet weak var retweeted_contentLable_topCons: NSLayoutConstraint!
+    @IBOutlet weak var retweeted_background_view: UIView!
+    
     @IBOutlet weak var pictureBoomMargin: NSLayoutConstraint!
     @IBOutlet weak var pictureWCons: NSLayoutConstraint!
     @IBOutlet weak var pictureViewHCons: NSLayoutConstraint!
@@ -40,8 +46,13 @@ class TLHomeViewCell: UITableViewCell {
             verfiledView.image = viewModel.verified_image
             vipView.image = viewModel.vip_image
             screenNameLable.text = viewModel.statuses?.user?.screen_name
-            creat_at_lable.text = viewModel.sourceStr
-            timeLable.text = viewModel.created_at_text
+            
+            if let sourceStr = viewModel.sourceStr {
+                creat_at_lable.text = "来自"+sourceStr
+            }else {
+                creat_at_lable.text = nil
+            }
+            timeLable.text = NSDate.creatDateString(creat_at: (viewModel.statuses?.created_at)!)
             contenLable.text = viewModel.statuses?.text
             
             screenNameLable.textColor = viewModel.vip_image == nil ? UIColor.black : UIColor.orange
@@ -51,6 +62,26 @@ class TLHomeViewCell: UITableViewCell {
             pictureViewHCons.constant = pictureViewSize.height
             
             pictureView.picture_urls = viewModel.imageURLS
+            
+            if let retweeted = viewModel.statuses?.retweeted_status {
+                retweeted_contentLable_topCons.constant = 15.0
+                retweeted_background_view.isHidden = false
+                let screen_name = retweeted.user?.screen_name ?? ""
+                let retweeted_text = retweeted.text ?? ""
+                let retweeted_content_text = "@"+"\(screen_name)："+retweeted_text
+                retweeted_content_lable.text = retweeted_content_text
+            }else {
+                retweeted_background_view.isHidden = true
+                retweeted_content_lable.text  = ""
+                retweeted_contentLable_topCons.constant = 0.0
+            }
+            
+            //计算cell的高度
+            layoutIfNeeded()
+            if viewModel.cellHeight == 0 {
+                let cellHeight = boomToolView.frame.maxY
+                viewModel.cellHeight = cellHeight
+            }
         }
     }
     

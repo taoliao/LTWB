@@ -8,12 +8,15 @@
 
 import UIKit
 import SDWebImage
+import MJRefresh
+import SVProgressHUD
 
 class HomeViewController: BaseTableViewController {
     
     static let homeCellD = "homeCell"
-    
     lazy var statusesViewModels : [StatusesViewModel] = [StatusesViewModel]()
+    lazy var newWeiboView : UIView = UIView(frame: CGRect(x: 0.0, y: IPHONE_NAVIGATIONBAR_HEIGHT-30.0, width: Double(UIScreen.main.bounds.width), height: 30.0))
+    lazy var newWeiboLable = UILabel(frame: newWeiboView.bounds)
     
     private lazy var titleBtn = TitleButton()
     private lazy var popoverAnimtor = PopoverAnimatior { (presented) in
@@ -29,7 +32,8 @@ class HomeViewController: BaseTableViewController {
         }
         setNavigationItem()
         setTitleView()
-        loadStatuses()
+        setUpTableViewHead()
+        setUpNewWeiboView()
     }
     
 }
@@ -41,8 +45,9 @@ extension HomeViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(imageName: "navigationbar_friendattention")
         navigationItem.rightBarButtonItem = UIBarButtonItem(imageName: "navigationbar_pop")
         self.tableView.separatorStyle = .none
-        self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.estimatedRowHeight = 300;
+//        self.tableView.rowHeight = UITableViewAutomaticDimension
+        //估算行高
+        self.tableView.estimatedRowHeight = 300
         self.tableView.register(UINib(nibName: "TLHomeViewCell", bundle: nil), forCellReuseIdentifier: HomeViewController.homeCellD)
 
     }
@@ -52,6 +57,34 @@ extension HomeViewController {
         navigationItem.titleView = titleBtn
         titleBtn.addTarget(self, action: #selector(titleBtnClick(titleBtn:)), for: .touchUpInside)
     }
+    
+    private func setUpTableViewHead() {
+        
+        let header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(headRefresh))
+        header?.setTitle("下拉刷新", for: .idle)
+        header?.setTitle("释放更新", for: .pulling)
+        header?.setTitle("加载中..", for: .refreshing)
+        tableView.mj_header = header
+        header?.beginRefreshing()
+        
+        let footer = MJRefreshAutoFooter(refreshingTarget: self, refreshingAction: #selector(footerRefresh))
+        tableView.mj_footer = footer
+    }
+    
+    private func setUpNewWeiboView() {
+        
+        let color = UIColor.orange.withAlphaComponent(0.8)
+        newWeiboView.backgroundColor = color
+        self.newWeiboView.isHidden = true
+        self.navigationController?.view.insertSubview(newWeiboView, belowSubview: (self.navigationController?.navigationBar)!)
+        
+        newWeiboLable.textColor = UIColor.white
+        newWeiboLable.textAlignment = .center
+        newWeiboLable.font = UIFont.systemFont(ofSize: 15.0)
+        newWeiboView.addSubview(newWeiboLable)
+        
+    }
+    
     
 }
 //MARK: 事件监听
@@ -68,29 +101,66 @@ extension HomeViewController {
         present(popVC, animated: true, completion: nil)
         
     }
-
+    //上拉刷新
+    @objc private func headRefresh() {
+        let lastModel = statusesViewModels.first
+        let since_id = lastModel?.statuses?.mid ?? 0
+        loadStatuses(since_id : since_id,max_id: 0,isheadRefresh: true)
+    }
+     //下拉加载
+    @objc private func footerRefresh() {
+        guard let firstModel = statusesViewModels.last else {
+            return
+        }
+        let max_id = (firstModel.statuses?.mid)! > 0 ? (firstModel.statuses?.mid)! - 1 : 0
+        loadStatuses(since_id: 0, max_id: max_id,isheadRefresh: false)
+    }
+    
+     @objc private func showNewWeiBoView() {
+        self.newWeiboView.isHidden = false
+        UIView.animate(withDuration: 1.5, animations: {
+             self.newWeiboView.frame.origin.y = CGFloat(IPHONE_NAVIGATIONBAR_HEIGHT)
+        }) { (_) in
+        }
+    }
+    @objc private func hideNewWeiBoView() {
+        UIView.animate(withDuration: 1.5, animations: {
+             self.newWeiboView.frame.origin.y = CGFloat(IPHONE_NAVIGATIONBAR_HEIGHT-30.0)
+        }) { (_) in
+            self.newWeiboView.isHidden = true
+        }
+    
+    }
 }
 
 //MARK:请求首页数据
 extension HomeViewController {
     
-    func loadStatuses() {
+    func loadStatuses(since_id : Int,max_id: Int,isheadRefresh: Bool) {
         
-        TLNetWorkTools.shared.loadStatuses { (statuses, error) in
-            
+        TLNetWorkTools.shared.loadStatuses(since_id: since_id, max_id: max_id) { (statuses, error) in
             guard let statuses = statuses else {
+                self.tableView.mj_header.endRefreshing()
+                self.tableView.mj_footer.endRefreshing()
                 return
             }
+            var tempModes : [StatusesViewModel] = [StatusesViewModel]()
             for item in statuses {
                 let status = Statuses(dict: item)
                 let viewModel = StatusesViewModel(status: status)
-                self.statusesViewModels.append(viewModel)
+                tempModes.append(viewModel)
             }
-
+            if isheadRefresh {
+                 self.statusesViewModels = tempModes + self.statusesViewModels
+            }else {
+                 self.statusesViewModels = self.statusesViewModels + tempModes
+            }
+            self.newWeiboLable.text = "更新了\(tempModes.count)条微博"
+            self.showNewWeiBoView()
+            //缓存图片
             self.cashImageData(viewModels: self.statusesViewModels)
-//            self.tableView.reloadData()
-
         }
+        
     }
     
     //缓存图片
@@ -116,9 +186,11 @@ extension HomeViewController {
         //在这里告诉调用者,下完完毕,执行下一步操作
         group.notify(queue: DispatchQueue.main) {
              self.tableView.reloadData()
+             self.tableView.mj_header.endRefreshing()
+             self.tableView.mj_footer.endRefreshing()
+            self.perform(#selector(self.hideNewWeiBoView), with: nil, afterDelay: 2.0)
+            
         }
-        
-        
     }
     
 }
@@ -131,15 +203,14 @@ extension HomeViewController {
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewController.homeCellD) as! TLHomeViewCell
-        
          cell.viewModel = statusesViewModels[indexPath.row]
-        
          return cell
     }
     
-//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//         return 300
-//    }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let viewModel = statusesViewModels[indexPath.row]
+        return viewModel.cellHeight
+    }
 }
 
 

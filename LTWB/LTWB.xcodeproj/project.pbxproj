@@ -44,6 +44,10 @@
 		D4A8B81520B3FC990004E897 /* PopoverViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4A8B81320B3FC990004E897 /* PopoverViewController.xib */; };
 		D4A8B81720B401530004E897 /* TLPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A8B81620B401530004E897 /* TLPresentationController.swift */; };
 		D4A8B81920B41D350004E897 /* PopoverAnimatior.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A8B81820B41D350004E897 /* PopoverAnimatior.swift */; };
+		D4B4FC3220C7BBB300607943 /* TLComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B4FC3020C7BBB300607943 /* TLComposeViewController.swift */; };
+		D4B4FC3320C7BBB300607943 /* TLComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4B4FC3120C7BBB300607943 /* TLComposeViewController.xib */; };
+		D4B4FC3520C7BE3D00607943 /* TLComPoseTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B4FC3420C7BE3D00607943 /* TLComPoseTitleView.swift */; };
+		D4B4FC3720C7C9D600607943 /* TLComposeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B4FC3620C7C9D600607943 /* TLComposeTextView.swift */; };
 		D4BE3C9D20BBA6C800241E7D /* TLUserAcountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BE3C9C20BBA6C800241E7D /* TLUserAcountViewModel.swift */; };
 		D4BE3CF420BC006C00241E7D /* TLWelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BE3CF220BC006C00241E7D /* TLWelcomeController.swift */; };
 		D4BE3CF520BC006C00241E7D /* TLWelcomeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4BE3CF320BC006C00241E7D /* TLWelcomeController.xib */; };
@@ -113,6 +117,10 @@
 		D4A8B81320B3FC990004E897 /* PopoverViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopoverViewController.xib; sourceTree = "<group>"; };
 		D4A8B81620B401530004E897 /* TLPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLPresentationController.swift; sourceTree = "<group>"; };
 		D4A8B81820B41D350004E897 /* PopoverAnimatior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverAnimatior.swift; sourceTree = "<group>"; };
+		D4B4FC3020C7BBB300607943 /* TLComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLComposeViewController.swift; sourceTree = "<group>"; };
+		D4B4FC3120C7BBB300607943 /* TLComposeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TLComposeViewController.xib; sourceTree = "<group>"; };
+		D4B4FC3420C7BE3D00607943 /* TLComPoseTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLComPoseTitleView.swift; sourceTree = "<group>"; };
+		D4B4FC3620C7C9D600607943 /* TLComposeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLComposeTextView.swift; sourceTree = "<group>"; };
 		D4BE3C9C20BBA6C800241E7D /* TLUserAcountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLUserAcountViewModel.swift; sourceTree = "<group>"; };
 		D4BE3CF220BC006C00241E7D /* TLWelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLWelcomeController.swift; sourceTree = "<group>"; };
 		D4BE3CF320BC006C00241E7D /* TLWelcomeController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TLWelcomeController.xib; sourceTree = "<group>"; };
@@ -232,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				D4792F7420AE61D900C9012B /* Main */,
+				D4B4FC2F20C7BB8500607943 /* Compose */,
 				D4792F7120AE618400C9012B /* Home */,
 				D4792F7220AE618400C9012B /* Message */,
 				D4792F7020AE618400C9012B /* Discover */,
@@ -349,6 +358,17 @@
 			path = UIPopover;
 			sourceTree = "<group>";
 		};
+		D4B4FC2F20C7BB8500607943 /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				D4B4FC3020C7BBB300607943 /* TLComposeViewController.swift */,
+				D4B4FC3120C7BBB300607943 /* TLComposeViewController.xib */,
+				D4B4FC3420C7BE3D00607943 /* TLComPoseTitleView.swift */,
+				D4B4FC3620C7C9D600607943 /* TLComposeTextView.swift */,
+			);
+			path = Compose;
+			sourceTree = "<group>";
+		};
 		DE469E67C74293603F161D22 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -370,7 +390,6 @@
 				D4792F3920AE5DE000C9012B /* Frameworks */,
 				D4792F3A20AE5DE000C9012B /* Resources */,
 				C114A7B9162AC4B937660ED4 /* [CP] Embed Pods Frameworks */,
-				01057F9D53FC2603758C38A7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -472,6 +491,7 @@
 				D424156920C53B6D002168B2 /* TLPictureCell.xib in Resources */,
 				D4411C5720AEB3EF0034BBE7 /* profile.storyboard in Resources */,
 				D4411C5A20AEB4D00034BBE7 /* Null.storyboard in Resources */,
+				D4B4FC3320C7BBB300607943 /* TLComposeViewController.xib in Resources */,
 				D4792F4720AE5DE000C9012B /* Assets.xcassets in Resources */,
 				D4792F8220AE634200C9012B /* MainVCSettings.json in Resources */,
 				D4A8B81520B3FC990004E897 /* PopoverViewController.xib in Resources */,
@@ -502,21 +522,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		01057F9D53FC2603758C38A7 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LTWB/Pods-LTWB-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		378AC5FE3946268EEB440C09 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -543,6 +548,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-LTWB/Pods-LTWB-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -550,6 +556,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -568,13 +575,16 @@
 			files = (
 				D4792F8020AE629900C9012B /* ProfileViewController.swift in Sources */,
 				D47C4D3920BE4CDA0030A4A9 /* Date+Extension.swift in Sources */,
+				D4B4FC3720C7C9D600607943 /* TLComposeTextView.swift in Sources */,
 				D4792F4020AE5DE000C9012B /* AppDelegate.swift in Sources */,
 				D498A6B220B2B8320047F571 /* BaseTableViewController.swift in Sources */,
 				D4792F7820AE624E00C9012B /* MainTabBarViewController.swift in Sources */,
 				D4659AB120B66B9800C733A6 /* OauthViewController.swift in Sources */,
 				D4659AB420B68A7000C733A6 /* Comment.swift in Sources */,
 				D47C4D4020BE93870030A4A9 /* TLHomeViewCell.swift in Sources */,
+				D4B4FC3520C7BE3D00607943 /* TLComPoseTitleView.swift in Sources */,
 				D4A8B81420B3FC990004E897 /* PopoverViewController.swift in Sources */,
+				D4B4FC3220C7BBB300607943 /* TLComposeViewController.swift in Sources */,
 				D47BDE7C20BD3469001B093A /* Statuses.swift in Sources */,
 				D4BE3C9D20BBA6C800241E7D /* TLUserAcountViewModel.swift in Sources */,
 				D424156820C53B6D002168B2 /* TLPictureCell.swift in Sources */,

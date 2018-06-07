@@ -17,6 +17,7 @@ class Statuses: NSObject {
    @objc var mid = 0 //微博MID
     var user : User?
    @objc var pic_urls : [[String : String]]?
+    var retweeted_status : Statuses?  //转发微博
     
     init(dict : [String : Any]) {
         super.init()
@@ -24,6 +25,10 @@ class Statuses: NSObject {
         //填充user模型
         let userDict = dict["user"] as! [String : Any]
         user = User(dict : userDict)
+        
+        if let retweete_Dict = dict["retweeted_status"]{
+            retweeted_status = Statuses(dict: retweete_Dict as! [String : Any])
+        }
         
     }
     override func setValue(_ value: Any?, forUndefinedKey key: String) {}
