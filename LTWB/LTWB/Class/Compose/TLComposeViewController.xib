@@ -11,6 +11,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TLComposeViewController" customModule="LTWB" customModuleProvider="target">
             <connections>
+                <outlet property="PicPickerViewHCons" destination="A1R-T5-zn6" id="HN9-W8-pUR"/>
+                <outlet property="boomScro" destination="ikj-Tm-BMY" id="06K-1e-31J"/>
+                <outlet property="picPickCollection" destination="c77-us-bGq" id="Cwl-5X-Jeh"/>
+                <outlet property="textView" destination="3Me-ty-5m9" id="Ugc-IW-2c1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,20 +23,50 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3Me-ty-5m9" customClass="TLComposeTextView" customModule="LTWB" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                </textView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ikj-Tm-BMY">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                    <subviews>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3Me-ty-5m9" customClass="TLComposeTextView" customModule="LTWB" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="c77-us-bGq" customClass="TLPicPickerCollection" customModule="LTWB" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="618" width="375" height="0.0"/>
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" id="A1R-T5-zn6"/>
+                            </constraints>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lsy-gr-cFO">
+                                <size key="itemSize" width="50" height="50"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="3Me-ty-5m9" firstAttribute="centerY" secondItem="ikj-Tm-BMY" secondAttribute="centerY" id="0Ee-Xu-7eB"/>
+                        <constraint firstItem="3Me-ty-5m9" firstAttribute="leading" secondItem="ikj-Tm-BMY" secondAttribute="leading" id="LNr-aU-12Z"/>
+                        <constraint firstAttribute="trailing" secondItem="c77-us-bGq" secondAttribute="trailing" id="Uh6-Lj-ORI"/>
+                        <constraint firstItem="3Me-ty-5m9" firstAttribute="top" secondItem="ikj-Tm-BMY" secondAttribute="top" id="hDW-dv-4L9"/>
+                        <constraint firstItem="c77-us-bGq" firstAttribute="leading" secondItem="ikj-Tm-BMY" secondAttribute="leading" id="i4r-a8-1rd"/>
+                        <constraint firstAttribute="bottom" secondItem="3Me-ty-5m9" secondAttribute="bottom" id="nxD-f5-1Ip"/>
+                        <constraint firstAttribute="bottom" secondItem="c77-us-bGq" secondAttribute="bottom" id="wBY-30-t9a"/>
+                        <constraint firstItem="3Me-ty-5m9" firstAttribute="centerX" secondItem="ikj-Tm-BMY" secondAttribute="centerX" id="xxy-3Q-tRX"/>
+                        <constraint firstAttribute="trailing" secondItem="3Me-ty-5m9" secondAttribute="trailing" id="zpT-Jh-JkJ"/>
+                    </constraints>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="3Me-ty-5m9" secondAttribute="trailing" id="2xG-Uu-nls"/>
-                <constraint firstItem="3Me-ty-5m9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="e2u-gk-yxI"/>
-                <constraint firstAttribute="bottom" secondItem="3Me-ty-5m9" secondAttribute="bottom" id="fRT-Rn-VCd"/>
-                <constraint firstItem="3Me-ty-5m9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="sLA-Nm-jaN"/>
+                <constraint firstAttribute="bottom" secondItem="ikj-Tm-BMY" secondAttribute="bottom" constant="49" id="B3b-2D-zk1"/>
+                <constraint firstItem="ikj-Tm-BMY" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PdE-DT-iYa"/>
+                <constraint firstItem="ikj-Tm-BMY" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="jnF-Sx-qrA"/>
+                <constraint firstAttribute="trailing" secondItem="ikj-Tm-BMY" secondAttribute="trailing" id="sot-sY-8lz"/>
             </constraints>
+            <point key="canvasLocation" x="63.5" y="54.5"/>
         </view>
     </objects>
 </document>

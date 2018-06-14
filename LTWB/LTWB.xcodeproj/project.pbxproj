@@ -17,6 +17,7 @@
 		D4411C5A20AEB4D00034BBE7 /* Null.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4411C5820AEB4D00034BBE7 /* Null.storyboard */; };
 		D4659AB120B66B9800C733A6 /* OauthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4659AAF20B66B9800C733A6 /* OauthViewController.swift */; };
 		D4659AB420B68A7000C733A6 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4659AB320B68A7000C733A6 /* Comment.swift */; };
+		D471D2DB20CA21610015F873 /* TLComposeTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D471D2DA20CA21610015F873 /* TLComposeTabbar.swift */; };
 		D4792F4020AE5DE000C9012B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4792F3F20AE5DE000C9012B /* AppDelegate.swift */; };
 		D4792F4520AE5DE000C9012B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4792F4320AE5DE000C9012B /* Main.storyboard */; };
 		D4792F4720AE5DE000C9012B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4792F4620AE5DE000C9012B /* Assets.xcassets */; };
@@ -48,6 +49,9 @@
 		D4B4FC3320C7BBB300607943 /* TLComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4B4FC3120C7BBB300607943 /* TLComposeViewController.xib */; };
 		D4B4FC3520C7BE3D00607943 /* TLComPoseTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B4FC3420C7BE3D00607943 /* TLComPoseTitleView.swift */; };
 		D4B4FC3720C7C9D600607943 /* TLComposeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B4FC3620C7C9D600607943 /* TLComposeTextView.swift */; };
+		D4BDB51A20CE50A9006A816B /* TLPicPickerCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BDB51920CE50A9006A816B /* TLPicPickerCollection.swift */; };
+		D4BDB51D20CE5169006A816B /* TLPicPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BDB51B20CE5169006A816B /* TLPicPickerCell.swift */; };
+		D4BDB51E20CE5169006A816B /* TLPicPickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4BDB51C20CE5169006A816B /* TLPicPickerCell.xib */; };
 		D4BE3C9D20BBA6C800241E7D /* TLUserAcountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BE3C9C20BBA6C800241E7D /* TLUserAcountViewModel.swift */; };
 		D4BE3CF420BC006C00241E7D /* TLWelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BE3CF220BC006C00241E7D /* TLWelcomeController.swift */; };
 		D4BE3CF520BC006C00241E7D /* TLWelcomeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4BE3CF320BC006C00241E7D /* TLWelcomeController.xib */; };
@@ -84,6 +88,7 @@
 		D4411C5920AEB4D00034BBE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LTWB/Base.lproj/Null.storyboard; sourceTree = "<group>"; };
 		D4659AAF20B66B9800C733A6 /* OauthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OauthViewController.swift; sourceTree = "<group>"; };
 		D4659AB320B68A7000C733A6 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		D471D2DA20CA21610015F873 /* TLComposeTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLComposeTabbar.swift; sourceTree = "<group>"; };
 		D4792F3C20AE5DE000C9012B /* LTWB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LTWB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4792F3F20AE5DE000C9012B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4792F4420AE5DE000C9012B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -121,6 +126,9 @@
 		D4B4FC3120C7BBB300607943 /* TLComposeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TLComposeViewController.xib; sourceTree = "<group>"; };
 		D4B4FC3420C7BE3D00607943 /* TLComPoseTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLComPoseTitleView.swift; sourceTree = "<group>"; };
 		D4B4FC3620C7C9D600607943 /* TLComposeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLComposeTextView.swift; sourceTree = "<group>"; };
+		D4BDB51920CE50A9006A816B /* TLPicPickerCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLPicPickerCollection.swift; sourceTree = "<group>"; };
+		D4BDB51B20CE5169006A816B /* TLPicPickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLPicPickerCell.swift; sourceTree = "<group>"; };
+		D4BDB51C20CE5169006A816B /* TLPicPickerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TLPicPickerCell.xib; sourceTree = "<group>"; };
 		D4BE3C9C20BBA6C800241E7D /* TLUserAcountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLUserAcountViewModel.swift; sourceTree = "<group>"; };
 		D4BE3CF220BC006C00241E7D /* TLWelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLWelcomeController.swift; sourceTree = "<group>"; };
 		D4BE3CF320BC006C00241E7D /* TLWelcomeController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TLWelcomeController.xib; sourceTree = "<group>"; };
@@ -361,12 +369,24 @@
 		D4B4FC2F20C7BB8500607943 /* Compose */ = {
 			isa = PBXGroup;
 			children = (
+				D4BDB51820CE507F006A816B /* PicPicker */,
 				D4B4FC3020C7BBB300607943 /* TLComposeViewController.swift */,
 				D4B4FC3120C7BBB300607943 /* TLComposeViewController.xib */,
 				D4B4FC3420C7BE3D00607943 /* TLComPoseTitleView.swift */,
 				D4B4FC3620C7C9D600607943 /* TLComposeTextView.swift */,
+				D471D2DA20CA21610015F873 /* TLComposeTabbar.swift */,
 			);
 			path = Compose;
+			sourceTree = "<group>";
+		};
+		D4BDB51820CE507F006A816B /* PicPicker */ = {
+			isa = PBXGroup;
+			children = (
+				D4BDB51920CE50A9006A816B /* TLPicPickerCollection.swift */,
+				D4BDB51B20CE5169006A816B /* TLPicPickerCell.swift */,
+				D4BDB51C20CE5169006A816B /* TLPicPickerCell.xib */,
+			);
+			path = PicPicker;
 			sourceTree = "<group>";
 		};
 		DE469E67C74293603F161D22 /* Pods */ = {
@@ -493,6 +513,7 @@
 				D4411C5A20AEB4D00034BBE7 /* Null.storyboard in Resources */,
 				D4B4FC3320C7BBB300607943 /* TLComposeViewController.xib in Resources */,
 				D4792F4720AE5DE000C9012B /* Assets.xcassets in Resources */,
+				D4BDB51E20CE5169006A816B /* TLPicPickerCell.xib in Resources */,
 				D4792F8220AE634200C9012B /* MainVCSettings.json in Resources */,
 				D4A8B81520B3FC990004E897 /* PopoverViewController.xib in Resources */,
 				D4411C5220AEB3C40034BBE7 /* message.storyboard in Resources */,
@@ -573,12 +594,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4BDB51D20CE5169006A816B /* TLPicPickerCell.swift in Sources */,
 				D4792F8020AE629900C9012B /* ProfileViewController.swift in Sources */,
 				D47C4D3920BE4CDA0030A4A9 /* Date+Extension.swift in Sources */,
 				D4B4FC3720C7C9D600607943 /* TLComposeTextView.swift in Sources */,
 				D4792F4020AE5DE000C9012B /* AppDelegate.swift in Sources */,
 				D498A6B220B2B8320047F571 /* BaseTableViewController.swift in Sources */,
 				D4792F7820AE624E00C9012B /* MainTabBarViewController.swift in Sources */,
+				D471D2DB20CA21610015F873 /* TLComposeTabbar.swift in Sources */,
 				D4659AB120B66B9800C733A6 /* OauthViewController.swift in Sources */,
 				D4659AB420B68A7000C733A6 /* Comment.swift in Sources */,
 				D47C4D4020BE93870030A4A9 /* TLHomeViewCell.swift in Sources */,
@@ -600,6 +623,7 @@
 				D4A8B80E20B3C4620004E897 /* UIBarButtonItem+Extention.swift in Sources */,
 				D4792F7A20AE626200C9012B /* HomeViewController.swift in Sources */,
 				D498A6B420B2B9750047F571 /* VisitorView.swift in Sources */,
+				D4BDB51A20CE50A9006A816B /* TLPicPickerCollection.swift in Sources */,
 				D4792F7E20AE628700C9012B /* DiscoverViewController.swift in Sources */,
 				D498A6AF20B2A0360047F571 /* UIButton+Extension.swift in Sources */,
 				D47C4D3B20BE7F360030A4A9 /* User.swift in Sources */,

@@ -49,9 +49,6 @@ extension TLComPoseTitleView {
             make.centerX.equalTo(comPoseLable.snp.centerX)
             make.top.equalTo(comPoseLable.snp.bottom).offset(3)
         }
-        
-//        backgroundColor = UIColor.green
-        
         comPoseLable.font = UIFont.systemFont(ofSize: 16.0)
         comPoseLable.text = "发微博"
         screenNameLable.font = UIFont.systemFont(ofSize: 14.0)

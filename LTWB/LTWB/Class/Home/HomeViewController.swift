@@ -72,7 +72,6 @@ extension HomeViewController {
     }
     
     private func setUpNewWeiboView() {
-        
         let color = UIColor.orange.withAlphaComponent(0.8)
         newWeiboView.backgroundColor = color
         self.newWeiboView.isHidden = true
@@ -82,7 +81,6 @@ extension HomeViewController {
         newWeiboLable.textAlignment = .center
         newWeiboLable.font = UIFont.systemFont(ofSize: 15.0)
         newWeiboView.addSubview(newWeiboLable)
-        
     }
     
     
@@ -152,11 +150,14 @@ extension HomeViewController {
             }
             if isheadRefresh {
                  self.statusesViewModels = tempModes + self.statusesViewModels
+                if tempModes.count > 0 {
+                    self.newWeiboLable.text = "更新了\(tempModes.count)条微博"
+                    self.showNewWeiBoView()
+                }
             }else {
                  self.statusesViewModels = self.statusesViewModels + tempModes
             }
-            self.newWeiboLable.text = "更新了\(tempModes.count)条微博"
-            self.showNewWeiBoView()
+
             //缓存图片
             self.cashImageData(viewModels: self.statusesViewModels)
         }
@@ -165,31 +166,25 @@ extension HomeViewController {
     
     //缓存图片
     func cashImageData(viewModels : [StatusesViewModel]) {
-       
         let group = DispatchGroup()
-        
         for viewModel in viewModels {
             for picture_url in viewModel.imageURLS {
                 //将当前的下载操作添加到组中
                 group.enter()
-            
                 SDWebImageManager.shared().imageDownloader?.downloadImage(with: picture_url, options: [], progress: nil, completed: { (image, _, _, _) in
                     //缓存到磁盘
                      SDWebImageManager.shared().imageCache?.store(image, forKey: picture_url.absoluteString, toDisk: true, completion: nil)
                     //离开当前组
                      group.leave()
                 })
-                
             }
         }
-        
         //在这里告诉调用者,下完完毕,执行下一步操作
         group.notify(queue: DispatchQueue.main) {
              self.tableView.reloadData()
              self.tableView.mj_header.endRefreshing()
              self.tableView.mj_footer.endRefreshing()
-            self.perform(#selector(self.hideNewWeiBoView), with: nil, afterDelay: 2.0)
-            
+             self.perform(#selector(self.hideNewWeiBoView), with: nil, afterDelay: 1.5)
         }
     }
     
