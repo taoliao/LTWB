@@ -31,4 +31,14 @@ extension UIButton {
     }
     
     
+    convenience init(title : String, backgroundColor : UIColor, font: UIFont, titleColor : UIColor) {
+        self.init()
+        setTitle(title, for: .normal)
+        setTitleColor(titleColor, for: .normal)
+        self.backgroundColor = backgroundColor
+        titleLabel?.font = font
+        
+    }
+    
+    
 }

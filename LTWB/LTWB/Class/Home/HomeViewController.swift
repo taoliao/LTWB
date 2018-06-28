@@ -34,6 +34,10 @@ class HomeViewController: BaseTableViewController {
         setTitleView()
         setUpTableViewHead()
         setUpNewWeiboView()
+        
+        //监听图片点击的通知
+        NotificationCenter.default.addObserver(self, selector: #selector(pictureClickNoti(noti:)), name: NSNotification.Name(rawValue: PictureClickNoti), object: nil)
+        
     }
     
 }
@@ -127,7 +131,19 @@ extension HomeViewController {
         }) { (_) in
             self.newWeiboView.isHidden = true
         }
+    }
     
+    @objc private func pictureClickNoti(noti : Notification) {
+        
+        let indexPatch = noti.userInfo![PictureIndexPatch] as! IndexPath
+        
+        let imageURLS = noti.userInfo![ImageUrlKey] as! [URL]
+        
+        let photoBorwser = TLPhotoBrowserController(indexPatch: indexPatch, image_urls: imageURLS)
+        
+        self.present(photoBorwser, animated: true, completion: nil)
+        
+        
     }
 }
 

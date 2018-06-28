@@ -36,22 +36,10 @@ extension TLComposeTextView {
         placeHolderLable.font = UIFont.systemFont(ofSize: 16.0)
         textContainerInset = UIEdgeInsets(top: 8, left: 10, bottom: 0, right: 10)
         
-        delegate = self
     }
     
 }
 
-extension TLComposeTextView:UITextViewDelegate {
-    
-    func textViewDidChange(_ textView: UITextView) {
-        
-        if  textView.text == "" {
-            placeHolderLable.isHidden = false
-        }else {
-            placeHolderLable.isHidden = true
-        }
-    }
-    
-}
+
 
 

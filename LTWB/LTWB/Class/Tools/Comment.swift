@@ -21,3 +21,6 @@ let IPHONE_TARBAR_HEIGHT = IS_iPhoneX ? 83.0 : 49.0
 
 let PICPICKERBTNCLICKNOTI = "PICPICKERBTNCLICKNOTI"
 let PICPICKERDELETEBTNCLICKNOTI = "PICPICKERDELETEBTNCLICKNOTI"
+let PictureClickNoti = "PictureClickNoti"
+let PictureIndexPatch = "PictureIndexPatch"
+let ImageUrlKey = "ImageUrlKey"

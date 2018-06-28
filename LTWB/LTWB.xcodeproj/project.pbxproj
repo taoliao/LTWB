@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		27AB82FEBD253C44E3509397 /* Pods_LTWB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5646CD40F8DDED96DBABBDFC /* Pods_LTWB.framework */; };
+		D423AA5E20E4B780004EE8FE /* TLProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D423AA5D20E4B77F004EE8FE /* TLProgressView.swift */; };
 		D424156820C53B6D002168B2 /* TLPictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D424156620C53B6D002168B2 /* TLPictureCell.swift */; };
 		D424156920C53B6D002168B2 /* TLPictureCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D424156720C53B6D002168B2 /* TLPictureCell.xib */; };
 		D4411C5020AEB3A70034BBE7 /* home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4411C4E20AEB3A70034BBE7 /* home.storyboard */; };
@@ -17,6 +18,13 @@
 		D4411C5A20AEB4D00034BBE7 /* Null.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4411C5820AEB4D00034BBE7 /* Null.storyboard */; };
 		D4659AB120B66B9800C733A6 /* OauthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4659AAF20B66B9800C733A6 /* OauthViewController.swift */; };
 		D4659AB420B68A7000C733A6 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4659AB320B68A7000C733A6 /* Comment.swift */; };
+		D4666DF020DB50D500D8AE72 /* TLFindEmoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4666DEF20DB50D500D8AE72 /* TLFindEmoticon.swift */; };
+		D46F0D5E20D207C600ABD522 /* TLEmoticonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46F0D5D20D207C600ABD522 /* TLEmoticonController.swift */; };
+		D46F0D6320D23F6200ABD522 /* TLEmoticonManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46F0D6220D23F6200ABD522 /* TLEmoticonManger.swift */; };
+		D46F0D6520D23F9400ABD522 /* TLEmoticonPackage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46F0D6420D23F9400ABD522 /* TLEmoticonPackage.swift */; };
+		D46F0D6720D23FB300ABD522 /* TLEmoticon.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46F0D6620D23FB300ABD522 /* TLEmoticon.swift */; };
+		D46F0D6D20D24D3400ABD522 /* Emoticons.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D46F0D6C20D24D3400ABD522 /* Emoticons.bundle */; };
+		D46F0D6F20D2634C00ABD522 /* TLEmoticonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46F0D6E20D2634C00ABD522 /* TLEmoticonCell.swift */; };
 		D471D2DB20CA21610015F873 /* TLComposeTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D471D2DA20CA21610015F873 /* TLComposeTabbar.swift */; };
 		D4792F4020AE5DE000C9012B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4792F3F20AE5DE000C9012B /* AppDelegate.swift */; };
 		D4792F4520AE5DE000C9012B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4792F4320AE5DE000C9012B /* Main.storyboard */; };
@@ -39,6 +47,8 @@
 		D498A6B220B2B8320047F571 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D498A6B120B2B8320047F571 /* BaseTableViewController.swift */; };
 		D498A6B420B2B9750047F571 /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D498A6B320B2B9750047F571 /* VisitorView.swift */; };
 		D498A6B620B2B9930047F571 /* VisitorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D498A6B520B2B9930047F571 /* VisitorView.xib */; };
+		D4A0C0AD20E3249F00AD014A /* TLPhotoBrowserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A0C0AC20E3249F00AD014A /* TLPhotoBrowserController.swift */; };
+		D4A0C0AF20E37A5000AD014A /* TLPhotoBrowserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A0C0AE20E37A5000AD014A /* TLPhotoBrowserCell.swift */; };
 		D4A8B80E20B3C4620004E897 /* UIBarButtonItem+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A8B80D20B3C4620004E897 /* UIBarButtonItem+Extention.swift */; };
 		D4A8B81020B3E8160004E897 /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A8B80F20B3E8160004E897 /* TitleButton.swift */; };
 		D4A8B81420B3FC990004E897 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A8B81220B3FC990004E897 /* PopoverViewController.swift */; };
@@ -56,6 +66,8 @@
 		D4BE3CF420BC006C00241E7D /* TLWelcomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BE3CF220BC006C00241E7D /* TLWelcomeController.swift */; };
 		D4BE3CF520BC006C00241E7D /* TLWelcomeController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4BE3CF320BC006C00241E7D /* TLWelcomeController.xib */; };
 		D4BEE05D20B7EC4A00C021A9 /* TLUserAcount.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BEE05C20B7EC4A00C021A9 /* TLUserAcount.swift */; };
+		D4D2942220DA207F00F4D847 /* TLEmoticonAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D2942120DA207F00F4D847 /* TLEmoticonAttachment.swift */; };
+		D4D2942420DA2F0000F4D847 /* UITextView+Extenion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D2942320DA2F0000F4D847 /* UITextView+Extenion.swift */; };
 		D4E784C520B54BA600102AA7 /* TLNetWorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E784C420B54BA600102AA7 /* TLNetWorkTools.swift */; };
 		D4FE928D20BFE16300287814 /* PictureCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4FE928C20BFE16300287814 /* PictureCollectionView.swift */; };
 /* End PBXBuildFile section */
@@ -79,6 +91,7 @@
 
 /* Begin PBXFileReference section */
 		5646CD40F8DDED96DBABBDFC /* Pods_LTWB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LTWB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D423AA5D20E4B77F004EE8FE /* TLProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLProgressView.swift; sourceTree = "<group>"; };
 		D424156620C53B6D002168B2 /* TLPictureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLPictureCell.swift; sourceTree = "<group>"; };
 		D424156720C53B6D002168B2 /* TLPictureCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TLPictureCell.xib; sourceTree = "<group>"; };
 		D4411C4F20AEB3A70034BBE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LTWB/Base.lproj/home.storyboard; sourceTree = "<group>"; };
@@ -88,6 +101,13 @@
 		D4411C5920AEB4D00034BBE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LTWB/Base.lproj/Null.storyboard; sourceTree = "<group>"; };
 		D4659AAF20B66B9800C733A6 /* OauthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OauthViewController.swift; sourceTree = "<group>"; };
 		D4659AB320B68A7000C733A6 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		D4666DEF20DB50D500D8AE72 /* TLFindEmoticon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLFindEmoticon.swift; sourceTree = "<group>"; };
+		D46F0D5D20D207C600ABD522 /* TLEmoticonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLEmoticonController.swift; sourceTree = "<group>"; };
+		D46F0D6220D23F6200ABD522 /* TLEmoticonManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLEmoticonManger.swift; sourceTree = "<group>"; };
+		D46F0D6420D23F9400ABD522 /* TLEmoticonPackage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLEmoticonPackage.swift; sourceTree = "<group>"; };
+		D46F0D6620D23FB300ABD522 /* TLEmoticon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLEmoticon.swift; sourceTree = "<group>"; };
+		D46F0D6C20D24D3400ABD522 /* Emoticons.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Emoticons.bundle; sourceTree = "<group>"; };
+		D46F0D6E20D2634C00ABD522 /* TLEmoticonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLEmoticonCell.swift; sourceTree = "<group>"; };
 		D471D2DA20CA21610015F873 /* TLComposeTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLComposeTabbar.swift; sourceTree = "<group>"; };
 		D4792F3C20AE5DE000C9012B /* LTWB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LTWB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4792F3F20AE5DE000C9012B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +136,8 @@
 		D498A6B120B2B8320047F571 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		D498A6B320B2B9750047F571 /* VisitorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		D498A6B520B2B9930047F571 /* VisitorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VisitorView.xib; sourceTree = "<group>"; };
+		D4A0C0AC20E3249F00AD014A /* TLPhotoBrowserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLPhotoBrowserController.swift; sourceTree = "<group>"; };
+		D4A0C0AE20E37A5000AD014A /* TLPhotoBrowserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLPhotoBrowserCell.swift; sourceTree = "<group>"; };
 		D4A8B80D20B3C4620004E897 /* UIBarButtonItem+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Extention.swift"; sourceTree = "<group>"; };
 		D4A8B80F20B3E8160004E897 /* TitleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
 		D4A8B81220B3FC990004E897 /* PopoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +155,8 @@
 		D4BE3CF220BC006C00241E7D /* TLWelcomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLWelcomeController.swift; sourceTree = "<group>"; };
 		D4BE3CF320BC006C00241E7D /* TLWelcomeController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TLWelcomeController.xib; sourceTree = "<group>"; };
 		D4BEE05C20B7EC4A00C021A9 /* TLUserAcount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLUserAcount.swift; sourceTree = "<group>"; };
+		D4D2942120DA207F00F4D847 /* TLEmoticonAttachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLEmoticonAttachment.swift; sourceTree = "<group>"; };
+		D4D2942320DA2F0000F4D847 /* UITextView+Extenion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Extenion.swift"; sourceTree = "<group>"; };
 		D4E784C420B54BA600102AA7 /* TLNetWorkTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TLNetWorkTools.swift; sourceTree = "<group>"; };
 		D4FE928C20BFE16300287814 /* PictureCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureCollectionView.swift; sourceTree = "<group>"; };
 		F3F09791194D6A7C4A7DAE83 /* Pods-LTWB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LTWB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LTWB/Pods-LTWB.debug.xcconfig"; sourceTree = "<group>"; };
@@ -190,6 +214,30 @@
 				D4BE3C9C20BBA6C800241E7D /* TLUserAcountViewModel.swift */,
 			);
 			path = Oauth;
+			sourceTree = "<group>";
+		};
+		D46F0D5C20D2079600ABD522 /* Emoticon */ = {
+			isa = PBXGroup;
+			children = (
+				D46F0D6C20D24D3400ABD522 /* Emoticons.bundle */,
+				D46F0D6120D23F3500ABD522 /* Model */,
+				D46F0D5D20D207C600ABD522 /* TLEmoticonController.swift */,
+				D46F0D6E20D2634C00ABD522 /* TLEmoticonCell.swift */,
+				D4D2942320DA2F0000F4D847 /* UITextView+Extenion.swift */,
+				D4666DEF20DB50D500D8AE72 /* TLFindEmoticon.swift */,
+			);
+			path = Emoticon;
+			sourceTree = "<group>";
+		};
+		D46F0D6120D23F3500ABD522 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D46F0D6220D23F6200ABD522 /* TLEmoticonManger.swift */,
+				D46F0D6420D23F9400ABD522 /* TLEmoticonPackage.swift */,
+				D46F0D6620D23FB300ABD522 /* TLEmoticon.swift */,
+				D4D2942120DA207F00F4D847 /* TLEmoticonAttachment.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		D4792F3320AE5DE000C9012B = {
@@ -270,6 +318,7 @@
 		D4792F7120AE618400C9012B /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				D4A0C0AB20E3247200AD014A /* PhotoBrowser */,
 				D4A8B81120B3FC6D0004E897 /* UIPopover */,
 				D47BDE7A20BD343F001B093A /* HomeModel */,
 				D4411C4E20AEB3A70034BBE7 /* home.storyboard */,
@@ -355,6 +404,16 @@
 			path = visitor;
 			sourceTree = "<group>";
 		};
+		D4A0C0AB20E3247200AD014A /* PhotoBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				D4A0C0AC20E3249F00AD014A /* TLPhotoBrowserController.swift */,
+				D4A0C0AE20E37A5000AD014A /* TLPhotoBrowserCell.swift */,
+				D423AA5D20E4B77F004EE8FE /* TLProgressView.swift */,
+			);
+			path = PhotoBrowser;
+			sourceTree = "<group>";
+		};
 		D4A8B81120B3FC6D0004E897 /* UIPopover */ = {
 			isa = PBXGroup;
 			children = (
@@ -369,6 +428,7 @@
 		D4B4FC2F20C7BB8500607943 /* Compose */ = {
 			isa = PBXGroup;
 			children = (
+				D46F0D5C20D2079600ABD522 /* Emoticon */,
 				D4BDB51820CE507F006A816B /* PicPicker */,
 				D4B4FC3020C7BBB300607943 /* TLComposeViewController.swift */,
 				D4B4FC3120C7BBB300607943 /* TLComposeViewController.xib */,
@@ -517,6 +577,7 @@
 				D4792F8220AE634200C9012B /* MainVCSettings.json in Resources */,
 				D4A8B81520B3FC990004E897 /* PopoverViewController.xib in Resources */,
 				D4411C5220AEB3C40034BBE7 /* message.storyboard in Resources */,
+				D46F0D6D20D24D3400ABD522 /* Emoticons.bundle in Resources */,
 				D4411C5520AEB3DD0034BBE7 /* discover.storyboard in Resources */,
 				D4BE3CF520BC006C00241E7D /* TLWelcomeController.xib in Resources */,
 				D4792F4520AE5DE000C9012B /* Main.storyboard in Resources */,
@@ -569,6 +630,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-LTWB/Pods-LTWB-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/HYLabel/HYLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
@@ -577,6 +639,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HYLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
@@ -594,24 +657,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D46F0D6520D23F9400ABD522 /* TLEmoticonPackage.swift in Sources */,
 				D4BDB51D20CE5169006A816B /* TLPicPickerCell.swift in Sources */,
 				D4792F8020AE629900C9012B /* ProfileViewController.swift in Sources */,
+				D46F0D6320D23F6200ABD522 /* TLEmoticonManger.swift in Sources */,
 				D47C4D3920BE4CDA0030A4A9 /* Date+Extension.swift in Sources */,
 				D4B4FC3720C7C9D600607943 /* TLComposeTextView.swift in Sources */,
 				D4792F4020AE5DE000C9012B /* AppDelegate.swift in Sources */,
 				D498A6B220B2B8320047F571 /* BaseTableViewController.swift in Sources */,
 				D4792F7820AE624E00C9012B /* MainTabBarViewController.swift in Sources */,
+				D46F0D6F20D2634C00ABD522 /* TLEmoticonCell.swift in Sources */,
 				D471D2DB20CA21610015F873 /* TLComposeTabbar.swift in Sources */,
 				D4659AB120B66B9800C733A6 /* OauthViewController.swift in Sources */,
 				D4659AB420B68A7000C733A6 /* Comment.swift in Sources */,
+				D4A0C0AD20E3249F00AD014A /* TLPhotoBrowserController.swift in Sources */,
 				D47C4D4020BE93870030A4A9 /* TLHomeViewCell.swift in Sources */,
 				D4B4FC3520C7BE3D00607943 /* TLComPoseTitleView.swift in Sources */,
 				D4A8B81420B3FC990004E897 /* PopoverViewController.swift in Sources */,
+				D4666DF020DB50D500D8AE72 /* TLFindEmoticon.swift in Sources */,
 				D4B4FC3220C7BBB300607943 /* TLComposeViewController.swift in Sources */,
+				D423AA5E20E4B780004EE8FE /* TLProgressView.swift in Sources */,
 				D47BDE7C20BD3469001B093A /* Statuses.swift in Sources */,
 				D4BE3C9D20BBA6C800241E7D /* TLUserAcountViewModel.swift in Sources */,
 				D424156820C53B6D002168B2 /* TLPictureCell.swift in Sources */,
+				D4D2942220DA207F00F4D847 /* TLEmoticonAttachment.swift in Sources */,
 				D47C4D3D20BE892E0030A4A9 /* StatusesViewModel.swift in Sources */,
+				D46F0D6720D23FB300ABD522 /* TLEmoticon.swift in Sources */,
 				D4A8B81720B401530004E897 /* TLPresentationController.swift in Sources */,
 				D4E784C520B54BA600102AA7 /* TLNetWorkTools.swift in Sources */,
 				D4A8B81020B3E8160004E897 /* TitleButton.swift in Sources */,
@@ -619,14 +690,17 @@
 				D4BE3CF420BC006C00241E7D /* TLWelcomeController.swift in Sources */,
 				D4FE928D20BFE16300287814 /* PictureCollectionView.swift in Sources */,
 				D4A8B81920B41D350004E897 /* PopoverAnimatior.swift in Sources */,
+				D4A0C0AF20E37A5000AD014A /* TLPhotoBrowserCell.swift in Sources */,
 				D4BEE05D20B7EC4A00C021A9 /* TLUserAcount.swift in Sources */,
 				D4A8B80E20B3C4620004E897 /* UIBarButtonItem+Extention.swift in Sources */,
 				D4792F7A20AE626200C9012B /* HomeViewController.swift in Sources */,
 				D498A6B420B2B9750047F571 /* VisitorView.swift in Sources */,
+				D46F0D5E20D207C600ABD522 /* TLEmoticonController.swift in Sources */,
 				D4BDB51A20CE50A9006A816B /* TLPicPickerCollection.swift in Sources */,
 				D4792F7E20AE628700C9012B /* DiscoverViewController.swift in Sources */,
 				D498A6AF20B2A0360047F571 /* UIButton+Extension.swift in Sources */,
 				D47C4D3B20BE7F360030A4A9 /* User.swift in Sources */,
+				D4D2942420DA2F0000F4D847 /* UITextView+Extenion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -748,6 +822,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -798,6 +873,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;

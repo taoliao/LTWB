@@ -52,7 +52,6 @@ class TLUserAcount: NSObject,NSCoding{
         aCoder.encode(expires_Date, forKey: "expires_Date")
         aCoder.encode(screen_name, forKey: "screen_name")
         aCoder.encode(avatar_large, forKey: "avatar_large")
-
     }
     
 }

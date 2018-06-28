@@ -20,11 +20,12 @@ class PictureCollectionView: UICollectionView {
     override func awakeFromNib() {
         super.awakeFromNib()
          dataSource = self
+         delegate = self
     }
     
 }
 
-extension PictureCollectionView: UICollectionViewDataSource {
+extension PictureCollectionView: UICollectionViewDataSource,UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return picture_urls.count
@@ -37,6 +38,12 @@ extension PictureCollectionView: UICollectionViewDataSource {
         cell.picture_url = picture_urls[indexPath.item]
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: PictureClickNoti), object: nil, userInfo: [PictureIndexPatch : indexPath,ImageUrlKey : picture_urls])
+        
     }
 
 }

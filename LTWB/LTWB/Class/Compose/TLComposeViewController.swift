@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class TLComposeViewController: UIViewController {
 
@@ -18,11 +19,19 @@ class TLComposeViewController: UIViewController {
     private lazy var titleView : TLComPoseTitleView = TLComPoseTitleView()
     
     private lazy var images : [UIImage] = [UIImage]()
-    
+
+    private lazy var emoticonVC : TLEmoticonController = TLEmoticonController {[weak self] (select_emoticon) in
+        self?.textView.placeHolderLable.isHidden = true
+        self?.navigationItem.rightBarButtonItem?.isEnabled = true
+        //插入表情
+        self?.textView.insertEmoticon(emoticon: select_emoticon)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpNavigationBar()
         boomScro.delegate = self
+        textView.delegate = self
         //监听通知
         addNoti()
     }
@@ -53,8 +62,19 @@ extension TLComposeViewController: ComposeTabbarDelegate {
        dismiss(animated: true, completion: nil)
     }
     
+    //MARK:发布wb
     @objc private func compose() {
-        print(#function)
+        
+         let status = textView.getEmoticonString()
+        
+        TLNetWorkTools.shared.sendStatus(status: status) { (isSuccess) in
+            if isSuccess {
+                SVProgressHUD.showSuccess(withStatus: "发送微博成功")
+            }else {
+                SVProgressHUD.showError(withStatus: "发送微博失败")
+            }
+        }
+
     }
     
     @objc private func keyboardWillChangeFrame(noti : NSNotification) {
@@ -105,6 +125,11 @@ extension TLComposeViewController: ComposeTabbarDelegate {
             UIView.animate(withDuration: 0.25, animations: {
                 self.view.layoutIfNeeded()
             })
+            
+        case 3:  //表情
+            textView.resignFirstResponder()
+            textView.inputView = textView.inputView != nil ? nil : emoticonVC.view
+            textView.becomeFirstResponder()
         default:
             break
             
@@ -132,4 +157,18 @@ extension TLComposeViewController: UIScrollViewDelegate {
     }
 }
 
+extension TLComposeViewController:UITextViewDelegate {
+    
+    func textViewDidChange(_ textView: UITextView) {
+        
+        if  !textView.hasText {
+            self.textView.placeHolderLable.isHidden = false
+            self.navigationItem.rightBarButtonItem?.isEnabled = false
+        }else {
+            self.textView.placeHolderLable.isHidden = true
+            self.navigationItem.rightBarButtonItem?.isEnabled = true
+        }
+    }
+    
+}
 

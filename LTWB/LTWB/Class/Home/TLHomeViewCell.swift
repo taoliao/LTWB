@@ -8,6 +8,7 @@
 
 import UIKit
 import SDWebImage
+import HYLabel
 
 private let leftMargin:CGFloat = 15.0
 private let imageMargin:CGFloat = 5.0
@@ -22,12 +23,12 @@ class TLHomeViewCell: UITableViewCell {
     @IBOutlet weak var vipView: UIImageView!
     @IBOutlet weak var creat_at_lable: UILabel!
     @IBOutlet weak var timeLable: UILabel!
-    @IBOutlet weak var contenLable: UILabel!
+    @IBOutlet weak var contenLable: HYLabel!
     @IBOutlet weak var pictureView: PictureCollectionView!
     
     @IBOutlet weak var boomToolView: UIView!
     
-    @IBOutlet weak var retweeted_content_lable: UILabel!  //转发微博的正文
+    @IBOutlet weak var retweeted_content_lable: HYLabel!  //转发微博的正文
     @IBOutlet weak var retweeted_contentLable_topCons: NSLayoutConstraint!
     @IBOutlet weak var retweeted_background_view: UIView!
     
@@ -49,11 +50,16 @@ class TLHomeViewCell: UITableViewCell {
             
             if let sourceStr = viewModel.sourceStr {
                 creat_at_lable.text = "来自"+sourceStr
+                let mutableAttributedString = NSMutableAttributedString(string:  creat_at_lable.text!)
+                mutableAttributedString.setAttributes([NSAttributedStringKey.foregroundColor : UIColor(red: 84/255.0, green: 129/255.0, blue: 164/255.0, alpha: 1.0)], range: NSRange(location: 2, length: (creat_at_lable.text! as NSString).length-2))
+                creat_at_lable.attributedText = mutableAttributedString
             }else {
                 creat_at_lable.text = nil
             }
             timeLable.text = NSDate.creatDateString(creat_at: (viewModel.statuses?.created_at)!)
-            contenLable.text = viewModel.statuses?.text
+            
+            let attributedText = TLFindEmoticon.shareInstance.findAttstring(statusText: viewModel.statuses?.text, font: contenLable.font)
+            contenLable.attributedText = attributedText
             
             screenNameLable.textColor = viewModel.vip_image == nil ? UIColor.black : UIColor.orange
             
@@ -69,7 +75,7 @@ class TLHomeViewCell: UITableViewCell {
                 let screen_name = retweeted.user?.screen_name ?? ""
                 let retweeted_text = retweeted.text ?? ""
                 let retweeted_content_text = "@"+"\(screen_name)："+retweeted_text
-                retweeted_content_lable.text = retweeted_content_text
+                retweeted_content_lable.attributedText = TLFindEmoticon.shareInstance.findAttstring(statusText: retweeted_content_text, font: retweeted_content_lable.font)
             }else {
                 retweeted_background_view.isHidden = true
                 retweeted_content_lable.text  = ""
@@ -88,12 +94,46 @@ class TLHomeViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         contentLableWCon.constant = UIScreen.main.bounds.width - leftMargin*2
-    
+        timeLable.textColor = UIColor.orange
+        contenLable.matchTextColor = UIColor(red: 84/255.0, green: 129/255.0, blue: 164/255.0, alpha: 1.0)
+        retweeted_content_lable.matchTextColor = UIColor(red: 84/255.0, green: 129/255.0, blue: 164/255.0, alpha: 1.0)
+        
         let flowLayout = pictureView.collectionViewLayout as! UICollectionViewFlowLayout
         flowLayout.minimumLineSpacing = 5
         flowLayout.minimumInteritemSpacing = 5
         pictureView.register(UINib.init(nibName: "TLPictureCell", bundle: nil), forCellWithReuseIdentifier: pictureCellID)
-    
+        // 监听@谁谁谁的点击
+        contenLable.userTapHandler = { (label, user, range) in
+            print(user)
+            print(range)
+        }
+        
+        // 监听链接的点击
+        contenLable.linkTapHandler = { (label, link, range) in
+            print(link)
+            print(range)
+        }
+        // 监听话题的点击
+        contenLable.topicTapHandler = { (label, topic, range) in
+            print(topic)
+            print(range)
+        }
+        // 监听@谁谁谁的点击
+        retweeted_content_lable.userTapHandler = { (label, user, range) in
+            print(user)
+            print(range)
+        }
+        
+        // 监听链接的点击
+        retweeted_content_lable.linkTapHandler = { (label, link, range) in
+            print(link)
+            print(range)
+        }
+        // 监听话题的点击
+        retweeted_content_lable.topicTapHandler = { (label, topic, range) in
+            print(topic)
+            print(range)
+        }
     }
     
 }

@@ -86,7 +86,7 @@ extension TLNetWorkTools {
     
 }
 
-//MARK:获取当前登录用户及其所关注（授权）用户的最新微博
+//MARK:获取当前登录用户及其所关注（授权）用户的最新wb
 extension TLNetWorkTools {
     
     func loadStatuses(since_id : Int,max_id : Int,finished : @escaping ([[String : Any]]?, Error?) -> ()) {
@@ -107,5 +107,24 @@ extension TLNetWorkTools {
 }
     
 }
+
+//MARK:发送文字wb
+extension TLNetWorkTools {
     
+    func sendStatus(status : String , isSuccess : @escaping (_ success : Bool) -> ()) {
+        
+        let urlstr = "https://api.weibo.com/2/statuses/update.json"
+        let parameters = ["access_token" : (TLUserAcountViewModel.shareInstance.userAcount?.access_token)!,"status":status]
+        
+        request(requestType: .POST, url: urlstr, parameters: parameters) { (result, error) in
+            if result != nil {
+                isSuccess(true)
+            }else {
+                isSuccess(false)
+            }
+        }
+    }
+}
+
+
 
